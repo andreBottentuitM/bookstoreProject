@@ -1,0 +1,142 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto:400,700&display=swap");
+
+html {
+    font-size: 62.5%;
+    width: 100vw;
+    height: 100vh;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    color: rgb(217, 209, 209);
+    font-family: "Roboto", sans-serif;
+    ;
+}
+
+.container-one {
+    display: flex;
+    align-items: center;
+    margin: 7.5rem auto;
+    width: 75rem;
+    gap: 3rem;
+    border: 1px solid white;
+    padding: 1rem 2rem;
+    background-color: rgb(37, 36, 36);
+    justify-content: center;
+    border-radius: 4px;
+}
+
+@media screen and (max-width:551px) {
+    .container-one {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 10rem auto;
+        width: 30rem;
+        height: 60rem;
+        gap: 3rem;
+        border: 1px solid white;
+        background-color: rgb(37, 36, 36);
+        justify-content: center;
+        border-radius: 4px;
+    }
+
+    .container-two {
+        width: 30rem;
+        margin-bottom: 2rem;
+        text-align: center;
+    }
+    
+}
+
+
+/*---------------------------DESCRIPTION------------------------------*/
+
+.image-book {
+    width: 15rem
+}
+
+@media screen and (max-width:551px) {
+    .image-book {
+        width: 10rem;
+        margin-top: 2rem;
+        height: 15rem
+    }
+}
+
+.container-two {
+    margin-bottom: 2rem;
+}
+
+@media screen and (max-width:550px) {
+    .container-two {
+        margin-bottom: 2rem;
+        margin-top: -3rem
+    }
+}
+
+.container-two h1 {
+    font-size: 2.5rem;
+    font-weight: border;
+    color: white;
+
+}
+
+.container-two h2 {
+    font-size: 1.8rem;
+    font-weight: border;
+    color: white;
+}
+
+.text {
+    font-size: 1.5rem
+}
+
+.text span {
+    font-weight: bolder;
+    color: white
+}
+
+.price {
+    margin-top: 3rem;
+    font-size: 2.5rem;
+    text-align: center;
+    font-weight: bolder;
+    color: white
+}
+
+/*-------------------------------COUNTDOWN---------------------*/
+
+.flex-countdown {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    text-align: center;
+    background-color: black;
+    border-radius: 4px;
+    color: white;
+}
+
+.flex-countdown div {
+    font-size: 1.5rem;
+    text-align: center;
+    padding-bottom: 1rem;
+}
+
+.flex-countdown div h3 {
+    margin-bottom: -0.1rem;
+    text-align: center;
+}
+
+.flex-countdown div span {
+    margin-left: -0.2rem;
+    text-align: center;
+    align-items: center;
+}
+<<<<<<< HEAD
+
+=======
+>>>>>>> 32bf49de60fc8e76d714ad57960afdb9b2144cff
