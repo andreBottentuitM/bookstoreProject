@@ -1,3 +1,13 @@
+//CLOSE BUTTON
+const closeButton = document.querySelector('.closed')
+closeButton.addEventListener('click', closePromotion)
+
+function closePromotion(e){
+  closeButton.style.display = 'none'
+  document.querySelector('.container-one').style.display = 'none'
+  document.querySelector('[page]').style.background = 'white'
+}
+
 const days = [
   'Domingo',
   'Segunda',
