@@ -12,13 +12,42 @@ body {
     box-sizing: border-box;
     color: rgb(217, 209, 209);
     font-family: "Roboto", sans-serif;
-    ;
+    background-color: rgb(37, 36, 36, 0.1)
+}
+
+.closed {
+    position: relative;
+    top: -38rem;
+    left: 55rem;
+    font-size: 3rem;
+    background-color:black;
+    padding: 0.5rem 1.5rem;
+    border-radius: 50%;
+    border: rgb(217, 209, 209) solid 2px;
+    cursor: pointer;
+    width: 2rem;
+}
+
+@media screen and (max-width:551px){
+    .closed{
+    position: relative;
+    top: -62rem;
+    left: 29rem;
+    font-size: 3rem;
+    background-color:black;
+    padding: 0.5rem 1.5rem;
+    border-radius: 50%;
+    border: rgb(217, 209, 209) solid 2px;
+    cursor: pointer;
+    width: 2rem;
+    }
 }
 
 .container-one {
     display: flex;
     align-items: center;
     margin: 7.5rem auto;
+    height: 38rem;
     width: 75rem;
     gap: 3rem;
     border: 1px solid white;
@@ -45,7 +74,7 @@ body {
 
     .container-two {
         width: 30rem;
-        margin-bottom: 2rem;
+        margin-bottom: 10rem;
         text-align: center;
     }
     
@@ -55,19 +84,21 @@ body {
 /*---------------------------DESCRIPTION------------------------------*/
 
 .image-book {
-    width: 15rem
+    width: 15rem;
 }
 
 @media screen and (max-width:551px) {
     .image-book {
         width: 10rem;
         margin-top: 2rem;
-        height: 15rem
+        height: 15rem;
+        margin-top: 6rem;
     }
 }
 
 .container-two {
-    margin-bottom: 2rem;
+    margin-top: 2rem;
+    
 }
 
 @media screen and (max-width:550px) {
