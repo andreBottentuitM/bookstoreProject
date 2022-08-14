@@ -13,6 +13,36 @@ body {
     font-family: "Roboto", sans-serif;
     width: 100%;
     box-sizing: border-box;
+    background-color: rgb(37, 36, 36, 0.1)
+}
+
+.closed {
+    position: relative;
+    top: -38rem;
+    left: 55rem;
+    font-size: 3rem;
+    background-color:black;
+    padding: 0.5rem 1.5rem;
+    border-radius: 50%;
+    border: rgb(217, 209, 209) solid 2px;
+    cursor: pointer;
+    width: 2rem;
+}
+
+@media screen and (max-width:551px){
+    .closed{
+    position: relative;
+    top: -62rem;
+    left: 29rem;
+    font-size: 3rem;
+    background-color:black;
+    padding: 0.5rem 1.5rem;
+    border-radius: 50%;
+    border: rgb(217, 209, 209) solid 2px;
+    cursor: pointer;
+    width: 2rem;
+    }
+
 }
 
 /*---------------------------------------------------------------------*/
@@ -98,6 +128,7 @@ body {
 
 .image-book {
     width: 10rem;
+
 }
 
 @media screen and (max-width:650px) {
@@ -111,7 +142,6 @@ body {
 
 .container-two {
     margin-top: 2rem;
-
 }
 
 @media screen and (max-width:650px) {
