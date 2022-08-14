@@ -2,12 +2,13 @@
 const closeButton = document.querySelector('.closed')
 closeButton.addEventListener('click', closePromotion)
 
-function closePromotion(e){
+function closePromotion(e) {
   closeButton.style.display = 'none'
   document.querySelector('.container-one').style.display = 'none'
   document.querySelector('[page]').style.background = 'white'
 }
 
+//START COUNTDOWN
 const days = [
   'Domingo',
   'Segunda',
@@ -46,7 +47,7 @@ const currentMonth = currentDate.getMonth()
 const currentDay = currentDate.getDate()
 
 //GETTING THE LIMIT DATE 
-const limitData = new Date(currentYear, currentMonth, currentDay + 10, 23, 59, 59)
+const limitData = new Date(currentYear, currentMonth, currentDay + 5, 23, 59, 59)
 const limitYear = limitData.getFullYear()
 const limitHours = limitData.getHours()
 const limitMinutes = limitData.getMinutes()
@@ -98,3 +99,14 @@ function takeTheTime() {
 
 let start = setInterval(takeTheTime, 1000)
 takeTheTime()
+
+
+//NAVBAR TOGGLE
+const navToggle = document.querySelector(".button")
+const links = document.querySelector(".flex-navbar-two")
+
+navToggle.addEventListener("click", function () {
+
+
+  links.classList.toggle("expand");
+});
