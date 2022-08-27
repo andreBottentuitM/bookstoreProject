@@ -1,12 +1,15 @@
 //CLOSE BUTTON
 const closeButton = document.querySelector('.closed')
+const transparency = document.querySelector('.transparent')
 closeButton.addEventListener('click', closePromotion)
 
 
 function closePromotion(e){
   closeButton.style.display = 'none'
+  transparency.style.display = 'none'
   document.querySelector('.container-one').style.display = 'none'
   document.querySelector('[page]').style.background = 'white'
+  document.querySelector('body').style.overflow = 'scroll'
 }
 
 
