@@ -116,54 +116,43 @@ navToggle.addEventListener("click", function () {
 });
 
 
-//SEARCH WITH CLICK
-const firstLupa = document.querySelector('[lupa]')
-firstLupa.addEventListener('click', clickSearch)
-
-const secondLupa = document.querySelector('[secondLupa]')
-secondLupa.addEventListener('click', clickSearchResponsive)
-
-function clickSearch() {
-  const input = document.querySelector('[search]')
-  const textInput = input.value.toLowerCase().normalize('NFD').replace(/([\u0300-\u036f]|[^0-9a-zA-Z])/g, '')
-  const valueOfAttribute = document.querySelector("#books")
-  for (di of valueOfAttribute.children) {
-    if (di.getAttribute("name").includes(textInput))
-      di.style.display = 'block'
-    else
-      di.style.display = "none"
+//GETTING SEARCH
+function GettingSearch(input, valueOfAttribute) {
+  this.clickSearch = function () {
+    for (di of valueOfAttribute.children) {
+      let textInput = input.value.toLowerCase().normalize('NFD').replace(/([\u0300-\u036f]|[^0-9a-zA-Z])/g, '')
+      if (di.getAttribute("name").includes(textInput))
+        di.style.display = 'block'
+      else
+        di.style.display = "none"
+    }
+  }
+  this.enterSearch = function (event) {
+    if (event.key === "Enter") {
+      event.preventDefault();
+      for (di of valueOfAttribute.children) {
+        let textInput = input.value.toLowerCase().normalize('NFD').replace(/([\u0300-\u036f]|[^0-9a-zA-Z])/g, '')
+        if (di.getAttribute("name").includes(textInput))
+          di.style.display = 'block'
+        else
+          di.style.display = "none"
+      }
+    }
   }
 }
 
-function clickSearchResponsive() {
-  const input = document.querySelector('[searchResponsive]')
-  const textInput = input.value.toLowerCase().normalize('NFD').replace(/([\u0300-\u036f]|[^0-9a-zA-Z])/g, '')
-  console.log(textInput)
-  const valueOfAttribute = document.querySelector("#books")
-  for (di of valueOfAttribute.children) {
-    if (di.getAttribute("name").includes(textInput))
-      di.style.display = 'block'
-    else
-      di.style.display = "none"
-  }
-}
-
-
-//SEARCH WITH ENTER
 const input = document.querySelector('[search]')
-input.addEventListener("keypress", function (event) {
-  if (event.key === "Enter") {
-    event.preventDefault();
+const responsiveInput = document.querySelector('[searchResponsive]')
+const valueOfAttribute = document.querySelector("#books")
+const search = new GettingSearch(input, valueOfAttribute)
+const searchResponsive = new GettingSearch(responsiveInput, valueOfAttribute)
+const firstLupa = document.querySelector('[lupa]')
+const secondLupa = document.querySelector('[secondLupa]')
 
-    clickSearch();
-  }
-});
+//GETTING SEARCH WITH CLICK
+firstLupa.addEventListener('click', search.clickSearch)
+secondLupa.addEventListener('click', searchResponsive.clickSearch)
 
-const inputResponsive = document.querySelector('[searchResponsive]')
-inputResponsive.addEventListener("keypress", function (event) {
-  if (event.key === "Enter") {
-    event.preventDefault()
-
-    clickSearchResponsive();
-  }
-});
+//GETTING SEARCH WITH ENTER
+input.addEventListener("keypress", search.enterSearch)
+responsiveInput.addEventListener("keypress", searchResponsive.enterSearch)
