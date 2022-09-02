@@ -1,4 +1,4 @@
-//CLOSE BUTTON
+/*--------------------------------CLOSE BUTTON-----------------------------------*/
 const closeButton = document.querySelector('.closed')
 const transparency = document.querySelector('.transparent')
 closeButton.addEventListener('click', closePromotion)
@@ -13,7 +13,7 @@ function closePromotion(e) {
 }
 
 
-//START COUNTDOWN
+/*--------------------------------START COUNTDOWN-----------------------------------*/
 const days = [
   'Domingo',
   'Segunda',
@@ -105,7 +105,7 @@ let start = setInterval(takeTheTime, 1000)
 takeTheTime()
 
 
-//NAVBAR TOGGLE
+/*--------------------------------NAV TOGGLE-----------------------------------*/
 const navToggle = document.querySelector(".button")
 const links = document.querySelector(".flex-navbar-two")
 
@@ -116,7 +116,7 @@ navToggle.addEventListener("click", function () {
 });
 
 
-//GETTING SEARCH
+/*--------------------------------GETTING SEARCH-----------------------------------*/
 function GettingSearch(input, valueOfAttribute) {
   this.clickSearch = function () {
     for (di of valueOfAttribute.children) {
@@ -156,3 +156,40 @@ secondLupa.addEventListener('click', searchResponsive.clickSearch)
 //GETTING SEARCH WITH ENTER
 input.addEventListener("keypress", search.enterSearch)
 responsiveInput.addEventListener("keypress", searchResponsive.enterSearch)
+
+
+/*--------------------------------LINKS LECTURE-----------------------------------*/
+function searchForLecture(e) {
+  const allBooks = document.querySelectorAll('[lecture]')
+  let lectureType = e.target.innerHTML
+  allBooks.forEach(item => {
+    if (item.getAttribute("lecture") == lectureType) {
+      item.style.display = 'block'
+    } else {
+      item.style.display = 'none'
+    }
+  })
+}
+
+const linksLectures = document.querySelectorAll('.lecture')
+linksLectures.forEach(item => item.addEventListener('click', searchForLecture))
+
+//TOGGLE BUTTON SHOP CART
+/* UNDER CONSTRUCTION
+
+const buttonClosedCart = document.querySelector('[closed-cart]')
+const cartShopping = document.querySelector('[cart-shopping]')
+const cart = document.querySelector('[openCart]')
+buttonClosedCart.addEventListener('click', closedCart)
+cartShopping.addEventListener('click', openCart)
+
+function openCart() {
+   document.querySelector('.container-books-cart').style.display = 'grid'
+   setTimeout(() => cart.style.width = '28rem',200)
+  
+}
+
+function closedCart() {
+  cart.style.width = '0rem'
+}
+*/

@@ -48,13 +48,13 @@
     <header class="nav-header">
         <nav>
             <div class="header-center">
-                <p class="logo">Decow's Bookstore</p>
+                <a href=""><img src="./IMAGES/logo.png" alt="logotipo" class="logo"></a>
                 <div class="flex-search">
                     <input class="search" type="search" search="books">
                     <i lupa class="fa-solid fa-magnifying-glass"></i>
                 </div>
                 <ul class="link-flex">
-                    <li><a href=""><i class="fa-solid fa-cart-shopping"></i></a></li>
+                    <li><a cart-shopping><i class="fa-solid fa-cart-shopping"></i></a></li>
                     <li><a href=""><i class="fa-solid fa-right-to-bracket"></i></a></li>
                 </ul>
                 <button class="button"><i class="fa-solid fa-bars"></i></button>
@@ -62,10 +62,10 @@
 
             <div class="flex-navbar-two">
                 <ul class="flex-literatura">
-                    <li><a href="">Literatura Russa</a></li>
-                    <li><a href="">Literatura Brasileira</a></li>
-                    <li><a href="">Literatura Americana</a></li>
-                    <li><a href="">Literatura Francesa</a></li>
+                    <li class="lecture"><a>Literatura Russa</a></li>
+                    <li class='lecture'><a>Literatura Brasileira</a></li>
+                    <li class='lecture'><a>Literatura Americana</a></li>
+                    <li class='lecture'><a>Literatura Francesa</a></li>
                 </ul>
 
             </div>
@@ -78,7 +78,7 @@
     </header>
     <main>
         <div class="flex-container-books" id="books">
-            <section id="book-promotion" name="guerraepaz lievtolstoi">
+            <section id="book-promotion" name="guerraepaz lievtolstoi" lecture="Literatura Russa">
                 <article>
                     <div class="flex-book">
                         <img src="./IMAGES/guerra e paz.jpg" alt="Guerra e paz">
@@ -96,7 +96,7 @@
                     </div>
                 </article>
             </section>
-            <section name="romancedapedradoreino arianosuassuna">
+            <section name="romancedapedradoreino arianosuassuna" lecture="Literatura Brasileira">
                 <article>
                     <div class="flex-book">
                         <img src="./IMAGES/livroPedra.jpg" alt="Romance da pedra do reino">
@@ -112,13 +112,13 @@
                     </div>
                 </article>
             </section>
-            <section name="ossertoes guimaraesrosa">
+            <section name="ossertoes euclidesdacunha" lecture="Literatura Brasileira">
                 <article>
                     <div class="flex-book">
                         <img src="./IMAGES/os sertoes.jpg" alt="Os Sertões">
                         <div class="flex-content-book">
                             <p book>Os Sertões</p>
-                            <p>Autor: Guimarães Rosa</p>
+                            <p>Autor: Euclides da Cunha</p>
                             <p>Formato: Capa dura</p>
                             <P>POR: <span>R$49.99</span></P>
                             <button>
@@ -128,7 +128,7 @@
                     </div>
                 </article>
             </section>
-            <section name="crimeecastigo fiodor dostoievski">
+            <section name="crimeecastigo fiodor dostoievski" lecture="Literatura Russa">
                 <article>
                     <div class="flex-book">
                         <img src="./IMAGES/crimecastigo.jpg" alt="Crime e castigo">
@@ -144,7 +144,7 @@
                     </div>
                 </article>
             </section>
-            <section name="memoriaspostumasdebrascubas machadodeassis">
+            <section name="memoriaspostumasdebrascubas machadodeassis" lecture="Literatura Brasileira">
                 <article>
                     <div class="flex-book">
                         <img src="./IMAGES/memorias.jpg" alt="Memórias Póstumas de Brás Cubas">
@@ -160,7 +160,7 @@
                     </div>
                 </article>
             </section>
-            <section name="annakarienina lievtolstoi">
+            <section name="annakarienina lievtolstoi" lecture="Literatura Russa">
                 <article>
                     <div class="flex-book">
                         <img src="./IMAGES/karinena.jpg" alt="Anna Kariênina">
@@ -176,7 +176,7 @@
                     </div>
                 </article>
             </section>
-            <section name="candidoouootimismo voltaire">
+            <section name="candidoouootimismo voltaire" lecture="Literatura Francesa">
                 <article>
                     <div class="flex-book">
                         <img src="./IMAGES/voltaire.jpg" alt="Cândido ou o Otimismo">
@@ -192,7 +192,7 @@
                     </div>
                 </article>
             </section>
-            <section name="osmiseraveis victorhugo">
+            <section name="osmiseraveis victorhugo" lecture="Literatura Francesa">
                 <article>
                     <div class="flex-book">
                         <img src="./IMAGES/miseraveis.jpg" alt="Os Miseráveis">
@@ -208,7 +208,7 @@
                     </div>
                 </article>
             </section>
-            <section name="osirmaoskaramazov fiodordostoievski">
+            <section name="osirmaoskaramazov fiodordostoievski" lecture="Literatura Russa">
                 <article>
                     <div class="flex-book">
                         <img src="./IMAGES/irmaos karamazov.jpg" alt="Irmãos Karamazov">
@@ -224,7 +224,7 @@
                     </div>
                 </article>
             </section>
-            <section name="walden henrydavidthoreau">
+            <section name="walden henrydavidthoreau" lecture="Literatura Americana">
                 <article>
                     <div class="flex-book">
                         <img src="./IMAGES/walden.jpg" alt="Walden">
@@ -240,7 +240,7 @@
                     </div>
                 </article>
             </section>
-            <section name="ochamadoselvagem jacklondon">
+            <section name="ochamadoselvagem jacklondon" lecture="Literatura Americana">
                 <article>
                     <div class="flex-book">
                         <img src="./IMAGES/jack.jpg" alt="O Chamado Selvagem">
@@ -257,7 +257,7 @@
                     </div>
                 </article>
             </section>
-            <section name="ocondedemontecristo alexandredumas">
+            <section name="ocondedemontecristo alexandredumas" lecture="Literatura Francesa">
                 <article>
                     <div class="flex-book">
                         <img src="./IMAGES/dumas.jpg" alt="O Conde De Monte Cristo">
@@ -273,7 +273,7 @@
                     </div>
                 </article>
             </section>
-            <section name="adesobedienciacivil henrydavidthoreau">
+            <section name="adesobedienciacivil henrydavidthoreau" lecture="Literatura Americana">
                 <article>
                     <div class="flex-book">
                         <img src="./IMAGES/thoreau.jpg" alt="A Desobediência Civil">
@@ -289,7 +289,7 @@
                     </div>
                 </article>
             </section>
-            <section name="grandesertaoveredas joaoguimaraesrosa">
+            <section name="grandesertaoveredas joaoguimaraesrosa" lecture="Literatura Brasileira">
                 <article>
                     <div class="flex-book">
                         <img src="./IMAGES/veredas.jpg" alt="Grande Sertão: Veredas">
@@ -305,7 +305,7 @@
                     </div>
                 </article>
             </section>
-            <section name="acondutadavida ralphwaldoemerson">
+            <section name="acondutadavida ralphwaldoemerson" lecture="Literatura Americana">
                 <article>
                     <div class="flex-book">
                         <img src="./IMAGES/waldo.jpg" alt="A Conduta da Vida">
@@ -321,7 +321,7 @@
                     </div>
                 </article>
             </section>
-            <section name="madamebovary gustaveflaubert">
+            <section name="madamebovary gustaveflaubert" lecture="Literatura Francesa">
                 <article>
                     <div class="flex-book">
                         <img src="./IMAGES/bovary.jpg" alt="Madame Bovary">
@@ -340,6 +340,99 @@
         </div>
 
     </main>
+
+    <aside>
+        <div openCart class="container-books-cart">
+            <div class="flex-cart-closed">
+                <h1>Seus Livros</h1>
+                <div closed-cart>X</div>
+            </div>
+            <section>
+                <img src="" alt="">
+                <span>Guerra e paz</span>
+                <input type="number">
+            </section>
+            <section>
+                <img src="" alt="">
+                <span>Romance da Pedra do Reino</span>
+                <input type="number">
+            </section>
+            <section>
+                <img src="" alt="">
+                <span>Os Sertões</span>
+                <input type="number">
+            </section>
+            <section>
+                <img src="" alt="">
+                <span>Crime e Castigo</span>
+                <input type="number">
+            </section>
+            <section>
+                <img src="" alt="">
+                <span>Memórias Póstumas de Brás Cubas</span>
+                <input type="number">
+            </section>
+            <section>
+                <img src="" alt="">
+                <span>Anna Kariênina </span>
+                <input type="number">
+            </section>
+            <section>
+                <img src="" alt="">
+                <span>Os Miseráveis
+
+                </span>
+                <input type="number">
+            </section>
+            <section>
+                <img src="" alt="">
+                <span>Os Irmãos Karamazov</span>
+                <input type="number">
+            </section>
+            <section>
+                <img src="" alt="">
+                <span>Walden</span>
+                <input type="number">
+            </section>
+            <section>
+                <img src="" alt="">
+                <span>O Chamado Selvagem</span>
+                <input type="number">
+            </section>
+            <section>
+                <img src="" alt="">
+                <span>O Conde De Monte Cristo</span>
+                <input type="number">
+            </section>
+            <section>
+                <img src="" alt="">
+                <span>A Desobediência Civil</span>
+                <input type="number">
+            </section>
+            <section>
+                <img src="" alt="">
+                <span>Grande Sertão: Veredas</span>
+                <input type="number">
+            </section>
+            <section>
+                <img src="" alt="">
+                <span>A Conduta da Vida</span>
+                <input type="number">
+            </section>
+            <section>
+                <img src="" alt="">
+                <span>Madame Bovary</span>
+                <input type="number">
+            </section>
+            <section>
+                <img src="" alt="">
+                <span>Cândido ou o Otimismo</span>
+                <input type="number">
+            </section>
+        </div>
+
+
+    </aside>
     <script src="./script.js"></script>
 </body>
 

@@ -23,7 +23,7 @@ body {
     top: -38rem;
     left: 55rem;
     font-size: 3rem;
-    background-color:black;
+    background-color: black;
     padding: 0.5rem 1.5rem;
     border-radius: 50%;
     border: rgb(217, 209, 209) solid 2px;
@@ -31,18 +31,18 @@ body {
     width: 2rem;
 }
 
-@media screen and (max-width:551px){
-    .closed{
-    position: relative;
-    top: -62rem;
-    left: 29rem;
-    font-size: 3rem;
-    background-color:black;
-    padding: 0.5rem 1.5rem;
-    border-radius: 50%;
-    border: rgb(217, 209, 209) solid 2px;
-    cursor: pointer;
-    width: 2rem;
+@media screen and (max-width:551px) {
+    .closed {
+        position: relative;
+        top: -62rem;
+        left: 29rem;
+        font-size: 3rem;
+        background-color: black;
+        padding: 0.5rem 1.5rem;
+        border-radius: 50%;
+        border: rgb(217, 209, 209) solid 2px;
+        cursor: pointer;
+        width: 2rem;
     }
 
 }
@@ -94,10 +94,10 @@ body {
     background-color: rgb(37, 36, 36);
     border-radius: 4px;
     z-index: 10;
-    position:fixed
-} 
+    position: fixed
+}
 
-.center-promotion{
+.center-promotion {
     display: flex;
     justify-content: center;
 }
@@ -106,7 +106,7 @@ body {
     background-color: black;
     position: absolute;
     height: 100%;
-    width:100%;
+    width: 100%;
     opacity: 0.5;
     background-size: cover;
     z-index: 2
@@ -236,23 +236,20 @@ body {
     background-color: rgb(37, 36, 36);
     color: white;
     border-bottom: 3px solid rgb(37, 36, 36);
-    
+
 }
 
 .logo {
-    font-family: 'Libre Baskerville', sans-serif;
-    font-size: 2rem;
-    font-weight: bolder;
     padding-left: 5rem;
-    text-align: center;
-
+    width: 10rem
 }
 
 .header-center {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 2rem 0;
+    padding: 3rem 0;
+    position: relative;
 }
 
 .link-flex {
@@ -308,6 +305,7 @@ body {
     background-color: rgb(217, 209, 209);
     color: rgb(37, 36, 36);
     justify-content: center;
+    height: 4rem;
 }
 
 .flex-navbar-two p {
@@ -320,7 +318,7 @@ body {
     list-style-type: none;
     gap: 5rem;
     font-size: 2rem;
-
+    cursor: pointer;
 }
 
 .flex-literatura a {
@@ -343,7 +341,7 @@ body {
     margin-right: 0.5rem;
 }
 
-.fa-magnifying-glass{
+.fa-magnifying-glass {
     cursor: pointer;
 }
 
@@ -358,9 +356,10 @@ body {
         margin-right: 0.5rem;
         padding-bottom: 1rem;
     }
-    .fa-magnifying-glass{
+
+    .fa-magnifying-glass {
         margin-left: 0.5rem;
-        color:rgb(217, 209, 209);
+        color: rgb(217, 209, 209);
     }
 
     .lupa {
@@ -372,6 +371,7 @@ body {
     }
 
     .logo {
+        margin-top: -2rem;
         font-size: 1.2rem;
         margin-left: -5rem;
 
@@ -414,6 +414,7 @@ body {
         margin-top: 1rem;
         width: 100%;
         padding-bottom: 1rem;
+        align-items: center;
     }
 
     .button {
@@ -446,50 +447,51 @@ body {
 /*------------------------------------------------------------------*/
 
 
-.flex-container-books{
-    margin: 20rem auto;
-    display:grid;
+.flex-container-books {
+    margin: 15rem auto;
+    display: grid;
     grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
     align-items: center;
-    row-gap:3rem;
+    row-gap: 3rem;
     column-gap: 1rem;
 }
 
-.flex-book{
+.flex-book {
     display: flex;
     flex-direction: column;
-    width:20rem;
+    width: 20rem;
     height: 45rem;
     align-items: center;
     text-align: start;
     border: rgb(76, 75, 75, 0.1) solid 1px;
 }
 
-.flex-content-promotion-book{
+.flex-content-promotion-book {
     font-size: 1rem;
     display: grid;
     width: 15rem;
-    grid-template-rows: 5rem  3rem 3rem 3rem 1.6rem;
+    grid-template-rows: 5rem 3rem 3rem 3rem 1.6rem;
     font-size: 1.3rem;
-    color:rgb(76, 75, 75)
+    color: rgb(76, 75, 75)
 }
 
-.flex-content-book{
+.flex-content-book {
     font-size: 1rem;
     display: grid;
     width: 15rem;
     grid-template-rows: 8rem 3rem 5rem 5rem 5rem;
     font-size: 1.3rem;
-    color:rgb(76, 75, 75)
+    color: rgb(76, 75, 75)
 }
-.promotion{
+
+.promotion {
     background: green;
-    color:white;
+    color: white;
     text-align: center;
 }
 
 
-.flex-book p:nth-child(1){
+.flex-book p:nth-child(1) {
     font-size: 1.5rem;
     font-weight: bolder;
 }
@@ -500,101 +502,142 @@ body {
     color: black;
 }
 
-#book-promotion{
+#book-promotion {
     border: 3px solid black;
     width: 20.1rem
 }
 
-#book-promotion p:nth-child(2){
+#book-promotion p:nth-child(2) {
     font-size: 1.5rem;
     font-weight: bolder;
 }
 
 .flex-book button {
-  width:15rem;
-  height: 3rem;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-  font-weight: bolder;
-  background-color:rgb(76, 75, 75);
-  color:white
+    width: 15rem;
+    height: 3rem;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bolder;
+    background-color: rgb(76, 75, 75);
+    color: white
 }
 
 
-#old-price{
+#old-price {
     font-size: 1.3rem;
-    color:rgb(76, 75, 75);
+    color: rgb(76, 75, 75);
     text-decoration: line-through;
 }
 
 
 .flex-book img {
-    width:15rem;
+    width: 15rem;
     height: 20rem;
     background-color: rgb(250, 249, 248);
     padding: 0 2.5rem
 }
 
 
-@media screen and (max-width:450px){
-    .flex-container-books{
+@media screen and (max-width:450px) {
+    .flex-container-books {
         grid-template-columns: repeat(1, 4rem);
         justify-content: flex-start;
         border: rgb(76, 75, 75, 0.1) solid 1px;
     }
 
-    .flex-book{
+    .flex-book {
         display: flex;
         flex-direction: row;
         align-items: center;
         border: rgb(76, 75, 75, 0.1) solid 1px;
-        width:99vw;
-        height:15.5rem;
-        gap:1rem
+        width: 99vw;
+        height: 15.5rem;
+        gap: 1rem
     }
 
-    .flex-content-book{
-      display: grid;
-      justify-content: center;
-      height: 16rem;
-      grid-template-rows: 7rem 5.5rem
+    .flex-content-book {
+        display: grid;
+        justify-content: center;
+        height: 16rem;
+        grid-template-rows: 7rem 5.5rem
     }
 
     .flex-book img {
-        width:8rem;
+        width: 8rem;
         height: 13rem;
         background-color: rgb(250, 249, 248);
         padding: 0 1.5rem
     }
 
-    .flex-book p:nth-child(2){
-        display: none;
-    }
-    .flex-book p:nth-child(3){
+    .flex-book p:nth-child(2) {
         display: none;
     }
 
-    .flex-content-promotion-book{
+    .flex-book p:nth-child(3) {
+        display: none;
+    }
+
+    .flex-content-promotion-book {
         display: grid;
         grid-template-rows: 5rem 1rem 1rem;
-        margin-top:-1rem
+        margin-top: -1rem
     }
 
-    #book-promotion{
+    #book-promotion {
         border: 3px solid black;
         width: 98vw;
     }
 
-    #book-promotion p:nth-child(2){
+    #book-promotion p:nth-child(2) {
         display: block;
         margin-top: -1rem;
     }
 
-    #book-promotion p:nth-child(3){
+    #book-promotion p:nth-child(3) {
         display: none;
     }
-    #book-promotion p:nth-child(4){
+
+    #book-promotion p:nth-child(4) {
         display: none;
     }
+}
+
+
+/*------------------------------------------------------------------*/
+/*-------------------------------ASIDE------------------------------*/
+/*------------------------------------------------------------------*/
+
+.flex-cart-closed {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.flex-cart-closed div {
+    font-size: 2.5rem;
+    cursor: pointer;
+}
+
+.container-books-cart {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    background-color: rgb(217, 209, 209);
+    color: rgb(76, 75, 75);
+    height: 100%;
+    width: 0;
+    font-size: 1.5rem;
+    font-weight: bolder;
+    overflow-y: scroll;
+    transition: all 0.3s linear;
+
+}
+
+.container-books-cart input {
+    width: 3rem;
+    height: 1rem
 }
