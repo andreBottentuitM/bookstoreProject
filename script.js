@@ -175,7 +175,6 @@ const linksLectures = document.querySelectorAll('.lecture')
 linksLectures.forEach(item => item.addEventListener('click', searchForLecture))
 
 //TOGGLE BUTTON SHOP CART
-/* UNDER CONSTRUCTION
 
 const buttonClosedCart = document.querySelector('[closed-cart]')
 const cartShopping = document.querySelector('[cart-shopping]')
@@ -184,12 +183,65 @@ buttonClosedCart.addEventListener('click', closedCart)
 cartShopping.addEventListener('click', openCart)
 
 function openCart() {
-   document.querySelector('.container-books-cart').style.display = 'grid'
-   setTimeout(() => cart.style.width = '28rem',200)
-  
+  document.querySelector('.container-books-cart').style.display = 'grid'
+  setTimeout(() => cart.style.width = '29rem', 200)
 }
 
 function closedCart() {
   cart.style.width = '0rem'
 }
-*/
+
+//BUTTON SHOPPING
+
+const allBooksCart = document.querySelectorAll('[openCart] section')
+
+
+function inputBookCart(e) {
+  let id = e.target.getAttribute('button-shop')
+  amount.forEach((item, i) => {
+    let valueInput = amount[i].value
+    let valueTotal = item.getAttribute('valueBook')
+    if (i == id) {
+      allBooksCart[i].style.display = 'flex'
+    }
+  })
+}
+
+
+const allButtonsCart = document.querySelectorAll('#books button')
+allButtonsCart.forEach((button) => button.addEventListener('click', inputBookCart))
+
+
+function deleteBookCart(e) {
+  let id = e.target.getAttribute('button-delete')
+  amount.forEach((item, i) => {
+    let valueInput = amount[i].value
+    let valueTotal = item.getAttribute('valueBook')
+    if (i == id) {
+      allBooksCart[i].style.display = 'none'
+    }
+  })
+}
+
+const deleteCart = document.querySelectorAll('.delete')
+deleteCart.forEach(button => button.addEventListener('click', deleteBookCart))
+const amount = document.querySelectorAll('[amount]')
+const totalBook = document.querySelector('[totalBooks]')
+
+setInterval(() => {
+  let total = 0
+  amount.forEach((item, i) => {
+    let valueTotal = item.getAttribute('valueBook')
+    let quantidade = item.value
+    if (quantidade > 10) {
+      quantidade = 10
+    }
+    if (quantidade < 0) {
+      quantidade = 0
+    }
+    if (allBooksCart[i].style.display == 'flex') {
+      total += valueTotal * quantidade
+    }
+  })
+  totalBook.innerHTML = total.toFixed(2), 200
+}, 200)
