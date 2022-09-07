@@ -174,8 +174,7 @@ function searchForLecture(e) {
 const linksLectures = document.querySelectorAll('.lecture')
 linksLectures.forEach(item => item.addEventListener('click', searchForLecture))
 
-//TOGGLE BUTTON SHOP CART
-
+/*--------------------------------TOGGLE BUTTON SHOP CART-----------------------------------*/
 const buttonClosedCart = document.querySelector('[closed-cart]')
 const cartShopping = document.querySelector('[cart-shopping]')
 const cart = document.querySelector('[openCart]')
@@ -191,57 +190,85 @@ function closedCart() {
   cart.style.width = '0rem'
 }
 
-//BUTTON SHOPPING
-
+//BUTTON INPUT BOOK TO CART
+const amountIcon = document.querySelector('[amountIcon]')
 const allBooksCart = document.querySelectorAll('[openCart] section')
+const amount = document.querySelectorAll('[amount]')
+const allButtonsCart = document.querySelectorAll('#books button')
+allButtonsCart.forEach((button) => button.addEventListener('click', inputBookCart))
+const totalShopCart = document.querySelector('.numberCart')
 
 
 function inputBookCart(e) {
   let id = e.target.getAttribute('button-shop')
+  
   amount.forEach((item, i) => {
-    let valueInput = amount[i].value
-    let valueTotal = item.getAttribute('valueBook')
     if (i == id) {
       allBooksCart[i].style.display = 'flex'
+      amount[i].value = 1
     }
   })
 }
 
 
-const allButtonsCart = document.querySelectorAll('#books button')
-allButtonsCart.forEach((button) => button.addEventListener('click', inputBookCart))
-
+const deleteCart = document.querySelectorAll('.delete')
+deleteCart.forEach(button => button.addEventListener('click', deleteBookCart))
 
 function deleteBookCart(e) {
   let id = e.target.getAttribute('button-delete')
   amount.forEach((item, i) => {
-    let valueInput = amount[i].value
-    let valueTotal = item.getAttribute('valueBook')
     if (i == id) {
       allBooksCart[i].style.display = 'none'
     }
   })
 }
 
-const deleteCart = document.querySelectorAll('.delete')
-deleteCart.forEach(button => button.addEventListener('click', deleteBookCart))
-const amount = document.querySelectorAll('[amount]')
-const totalBook = document.querySelector('[totalBooks]')
+setInterval(() => {
+  let totalShop = 0
+  allBooksCart.forEach((item, i) => {
+    if(allBooksCart[i].style.display == 'flex'){
+      totalShop += 1
+    }
+  }
+  
+)
+totalShopCart.innerHTML = totalShop})
+
+//NUMBER LIMIT AT INPUT
+amount.forEach(input => input.addEventListener('keyup',limitNumber))
+function limitNumber(e) {
+  let input = e.target;
+  if(input.value > 10){
+      let adjusting = 10;
+      input.value = parseInt(adjusting)
+  }
+  if(input.value <= 0){
+    let adjusting = 1;
+      input.value = parseInt(adjusting)
+  }
+};
+
+
+/*--------------------------------TOTAL VALUE-----------------------------------*/
+const totalBooks = document.querySelector('[totalBooks]')
+
+
 
 setInterval(() => {
   let total = 0
   amount.forEach((item, i) => {
-    let valueTotal = item.getAttribute('valueBook')
-    let quantidade = item.value
-    if (quantidade > 10) {
-      quantidade = 10
+    let valueBook = item.getAttribute('valueBook')
+    let units = item.value
+    if (units > 10) {
+      units = 10
     }
-    if (quantidade < 0) {
-      quantidade = 0
+    if (units < 0) {
+      units = 0
     }
+    
     if (allBooksCart[i].style.display == 'flex') {
-      total += valueTotal * quantidade
+      total += valueBook * units
     }
   })
-  totalBook.innerHTML = total.toFixed(2), 200
-}, 200)
+  totalBooks.innerHTML = ` R$${total.toFixed(2)}`
+}, 300)

@@ -256,7 +256,8 @@ body {
     display: flex;
     list-style-type: none;
     gap: 3rem;
-    margin-right: 5rem
+    margin-right: 5rem;
+    align-items: center;
 }
 
 .link-flex a {
@@ -343,6 +344,28 @@ body {
 
 .fa-magnifying-glass {
     cursor: pointer;
+}
+
+
+.cartAmount{
+    position: relative;
+    top:1.1rem;
+    cursor: pointer;
+}
+
+.numberCart {
+    position: relative;
+    top: -4rem;
+    left: 1.6rem;
+    font-size: 1rem;
+    background-color: rgb(217, 209, 209);
+    color: rgb(76, 75, 75);
+    padding: 0.7rem 0.6rem;
+    border-radius: 50%;
+    font-weight: bolder;
+    text-align: center;
+    width:1.1rem;
+    border: rgb(76, 75, 75) solid 1px;
 }
 
 
@@ -437,6 +460,7 @@ body {
         display: flex;
         width: 80vw;
         justify-content: flex-end;
+
     }
 
 }
