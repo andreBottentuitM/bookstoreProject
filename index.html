@@ -21,7 +21,7 @@
             <article class="container-two">
                 <h1>PROMOÇÃO:</h1>
                 <h2>Guerra e paz</h2>
-                <p class="text">Guerra e Paz é uma das obras mais volumosas da literatura mundial e narra a história da
+                <p  class="text" id="description">Guerra e Paz é uma das obras mais volumosas da literatura mundial e narra a história da
                     Rússia no tempo das guerras napoleônicas. É um livro rico em detalhes e realismo. Livro que marcou a
                     literatura mundial!</p>
                 <p class="text">Aproveite a promoção, ela é por tempo determinado: <span class="limit">aa</span></p>
@@ -54,9 +54,9 @@
                     <i lupa class="fa-solid fa-magnifying-glass"></i>
                 </div>
                 <ul class="link-flex">
-                    <li><a cart-shopping><i class="fa-solid fa-cart-shopping cartAmount"><div class="numberCart"></div></i></a></li>
-                    
-                    <li><a href=""><i class="fa-solid fa-right-to-bracket"></i></a></li>
+                    <li><a cart-shopping><i class="fa-solid fa-cart-shopping cartAmount"><div id="numberCart"></div></i></a></li>
+                    <li><a cart-shopping-responsive><i class="fa-solid fa-cart-shopping cartAmountResponsive"><div id="numberCartResponsive"></div></i></a></li>
+                    <li><a href=""><i class="fa-solid fa-user login"></i></a></li>
                 </ul>
                 <button class="button"><i class="fa-solid fa-bars"></i></button>
             </div>
@@ -90,7 +90,7 @@
                             <p>Formato: Capa dura</p>
                             <p>DE: <span id="old-price">R$67.99</span></p>
                             <P>POR: <span>R$30.00</span></P>
-                            <button button-shop="0">
+                            <button class="cart" button-shop="0">
                                 <i button-shop="0" class="fa-solid fa-cart-shopping"></i>
                                 Carrinho</button>
                         </div>
@@ -344,8 +344,9 @@
     <aside>
         <div openCart class="container-books-cart">
             <div class="flex-cart-closed">
+                <i class="fa-solid fa-book-open bookIcon"></i>
                 <h1>Seus Livros</h1>
-                <div closed-cart>X</div>
+                <div class="closed-cart"><i class="fa-solid fa-arrow-right"></i></div>
             </div>
             <div class="testando">
             <section class="flex-center-books-cart" value="30">
@@ -353,149 +354,145 @@
                 <div class="flex-center-content-books-cart">
                 <span>Guerra e Paz</span>
                 <span>R$ 30.00</span>
-                <label for="quantidade">Quantidade: <input amount valueBook="30.00" type="number" value="1" min="1" max="10"></label> 
-                
+                <label for="quantidade">Quantidade: <input amount valueBook="30.00" type="number" value="1" min="1" max="10"><i  button-delete="0" class="fa-solid fa-trash-can delete" alt="delete"></i></label> 
             </div>
-            <button class="delete" button-delete="0"><i button-delete="0" class="fa-solid fa-trash-can"></i></button>
+            
             </section>
             <section class="flex-center-books-cart" value="17">
                 <img src="./IMAGES/livroPedra.jpg" alt="Pedra do Reino">
                 <div class="flex-center-content-books-cart">
                 <span>Romance da Pedra do Reino</span>
                 <span>R$ 17.00</span>
-                <label for="quantidade">Quantidade: <input amount valueBook="17.00" type="number" value="1" min="1" max="10"></label>  
+                <label for="quantidade">Quantidade: <input amount valueBook="17.00" type="number" value="1" min="1" max="10"><i button-delete="1" class="fa-solid fa-trash-can delete" alt="delete"></i></label>  
                 
                 </div>
-                <button class="delete" button-delete="1"><i button-delete="1" class="fa-solid fa-trash-can"></i></button>
             </section>
             <section class="flex-center-books-cart" value="49.99">
                 <img src="./IMAGES/os sertoes.jpg" alt="Os Sertões">
                 <div class="flex-center-content-books-cart">
                 <span>Os Sertões</span>
                 <span>R$ 49.99</span>
-                <label for="quantidade">Quantidade: <input amount valueBook="49.99" type="number" value="1" min="1" max="10"></label>  
+                <label for="quantidade">Quantidade: <input amount valueBook="49.99" type="number" value="1" min="1" max="10"><i  button-delete="2" class="fa-solid fa-trash-can delete" alt="delete"></i></label>  
             </div>
-            <button class="delete" button-delete="2"><i button-delete="2" class="fa-solid fa-trash-can"></i></button>
             </section>
             <section class="flex-center-books-cart" value="12.99">
                 <img src="./IMAGES/crimecastigo.jpg" alt="Crime e Castigo">
                 <div class="flex-center-content-books-cart">
                 <span>Crime e Castigo</span>
                 <span>R$ 12.99</span>
-                <label for="quantidade">Quantidade: <input amount valueBook="12.99" type="number" value="1" min="1" max="10"></label>  
+                <label for="quantidade">Quantidade: <input amount valueBook="12.99" type="number" value="1" min="1" max="10"><i button-delete="3" class="fa-solid fa-trash-can delete" alt="delete"></i></label>  
+                
             </div>
-            <button class="delete" button-delete="3"><i button-delete="3" class="fa-solid fa-trash-can"></i></button>
             </section>
             <section class="flex-center-books-cart" value="21.99">
                 <img src="./IMAGES/memorias.jpg" alt="Memórias Póstumas de Brás Cubas">
                 <div class="flex-center-content-books-cart">
                 <span>Memórias Póstumas de Brás Cubas</span>
                 <span>R$ 21.99</span>
-                <label for="quantidade">Quantidade: <input amount valueBook="21.99" type="number" value="1" min="1" max="10"></label>  
+                <label for="quantidade">Quantidade: <input amount valueBook="21.99" type="number" value="1" min="1" max="10"><i button-delete="4" class="fa-solid fa-trash-can delete" alt="delete"></i></label>  
+                
             </div>
-            <button class="delete" button-delete="4"><i button-delete="4" class="fa-solid fa-trash-can"></i></button>
             </section>
             <section class="flex-center-books-cart" value="31">
                 <img src="./IMAGES/karinena.jpg" alt="Anna Kariênina">
                 <div class="flex-center-content-books-cart">
                 <span>Anna Kariênina </span>
                 <span>R$ 31.00</span>
-                <label for="quantidade">Quantidade: <input amount valueBook="31" type="number" value="1" min="1" max="10"></label>  
+                <label for="quantidade">Quantidade: <input amount valueBook="31" type="number" value="1" min="1" max="10"><i button-delete="5" class="fa-solid fa-trash-can delete" alt="delete"></i></label>  
+                
             </div>
-            <button class="delete" button-delete="5"><i button-delete="5" class="fa-solid fa-trash-can"></i></button>
             </section>
             <section class="flex-center-books-cart" value="49.90">
                 <img src="./IMAGES/voltaire.jpg" alt="Cândido, ou o Otimismo">
                 <div class="flex-center-content-books-cart">
                 <span>Cândido, ou o Otimismo</span>
                 <span>R$ 49.90</span>
-                <label for="quantidade">Quantidade: <input amount valueBook="49.90" type="number" value="1" min="1" max="10"></label>  
+                <label for="quantidade">Quantidade: <input amount valueBook="49.90" type="number" value="1" min="1" max="10"><i button-delete="6" class="fa-solid fa-trash-can delete" alt="delete"></i></label>  
+                
             </div>
-            <button class="delete" button-delete="6"><i  button-delete="6" class="fa-solid fa-trash-can"></i></button>
             </section>
             <section class="flex-center-books-cart" value="79">
                 <img src="./IMAGES/miseraveis.jpg" alt="Os Miseráveis">
                 <div class="flex-center-content-books-cart">
                 <span>Os Miseráveis</span>
                 <span>R$ 79.00</span>
-                <label for="quantidade">Quantidade: <input amount valueBook="79" type="number" value="1" min="1" max="10"></label>  
+                <label for="quantidade">Quantidade: <input amount valueBook="79" type="number" value="1" min="1" max="10"><i button-delete="7" class="fa-solid fa-trash-can delete" alt="delete"></i></label>  
+                
             </div>
-            <button class="delete" button-delete="7"><i button-delete="7" class="fa-solid fa-trash-can"></i></button>
             </section>
             <section class="flex-center-books-cart" value="121">
                 <img src="./IMAGES/irmaos karamazov.jpg" alt="Os Irmãos Karamazov">
                 <div class="flex-center-content-books-cart">
                 <span>Os Irmãos Karamazov</span>
                 <span>R$ 121.00</span>
-                <label for="quantidade">Quantidade: <input amount valueBook="121" type="number" value="1" min="1" max="10"></label>  
+                <label for="quantidade">Quantidade: <input amount valueBook="121" type="number" value="1" min="1" max="10"><i button-delete="8" class="fa-solid fa-trash-can delete" alt="delete"></i></label>  
+                
             </div>
-            <button class="delete" button-delete="8"><i button-delete="8" class="fa-solid fa-trash-can"></i></button>
             </section>
             <section class="flex-center-books-cart" value="54">
                 <img src="./IMAGES/walden.jpg" alt="Walden">
                 <div class="flex-center-content-books-cart">
                 <span>Walden</span>
                 <span>R$ 54.00</span>
-                <label for="quantidade">Quantidade: <input amount valueBook="54" type="number" value="1" min="1" max="10"></label>  
+                <label for="quantidade">Quantidade: <input amount valueBook="54" type="number" value="1" min="1" max="10"><i button-delete="9" class="fa-solid fa-trash-can delete" alt="delete"></i></label>  
+                
             </div>
-            <button class="delete" button-delete="9"><i button-delete="9" class="fa-solid fa-trash-can"></i></button>
             </section>
             <section class="flex-center-books-cart" value="11">
                 <img src="./IMAGES/jack.jpg" alt="O Chamado Selvagem">
                 <div class="flex-center-content-books-cart">
                 <span>O Chamado Selvagem</span>
                 <span>R$ 11.00</span>
-                <label for="quantidade">Quantidade: <input amount valueBook="11" type="number" value="1" min="1" max="10"></label>  
+                <label for="quantidade">Quantidade: <input amount valueBook="11" type="number" value="1" min="1" max="10"><i button-delete="10" class="fa-solid fa-trash-can delete" alt="delete"></i></label>  
             </div>
-            <button class="delete" button-delete="10"><i button-delete="10" class="fa-solid fa-trash-can"></i></button>
+            
             </section>
             <section class="flex-center-books-cart" value="30">
                 <img src="./IMAGES/dumas.jpg" alt="O Conde De Monte Cristo">
                 <div class="flex-center-content-books-cart">
                 <span>O Conde De Monte Cristo</span>
                 <span>R$ 30.00</span>
-                <label for="quantidade">Quantidade: <input amount valueBook="30" type="number" value="1" min="1" max="10"></label>  
+                <label for="quantidade">Quantidade: <input amount valueBook="30" type="number" value="1" min="1" max="10"><i button-delete="11" class="fa-solid fa-trash-can delete" alt="delete"></i></label>  
+                
             </div>
-            <button class="delete" button-delete="11"><i button-delete="11" class="fa-solid fa-trash-can"></i></button>
             </section>
             <section class="flex-center-books-cart" value="76">
                 <img src="./IMAGES/thoreau.jpg" alt="A Desobediência Civil">
                 <div class="flex-center-content-books-cart">
                 <span>A Desobediência Civil</span>
                 <span>R$ 76.00</span>
-                <label for="quantidade">Quantidade: <input amount valueBook="76" type="number" value="1" min="1" max="10"></label>  
+                <label for="quantidade">Quantidade: <input amount valueBook="76" type="number" value="1" min="1" max="10"><i button-delete="12" class="fa-solid fa-trash-can delete" alt="delete"></i></label>  
+                
             </div>
-            <button class="delete" button-delete="12"><i button-delete="12" class="fa-solid fa-trash-can"></i></button>
             </section>
             <section class="flex-center-books-cart" value="21.90">
                 <img src="./IMAGES/veredas.jpg" alt="Grande Sertão: Veredas">
                 <div class="flex-center-content-books-cart">
                 <span>Grande Sertão: Veredas</span>
                 <span>R$ 21.90</span>
-                <label for="quantidade">Quantidade: <input amount valueBook="21.90" type="number" value="1" min="1" max="10"></label>  
+                <label for="quantidade">Quantidade: <input amount valueBook="21.90" type="number" value="1" min="1" max="10"><i button-delete="13" class="fa-solid fa-trash-can delete" alt="delete"></i></label>  
+                
             </div>
-        <button class="delete" button-delete="13"><i button-delete="13" class="fa-solid fa-trash-can"></i></button>
             </section>
             <section class="flex-center-books-cart" value="61.99">
                 <img src="./IMAGES/waldo.jpg" alt="A Conduta da Vida">
                 <div class="flex-center-content-books-cart">
                 <span>A Conduta da Vida</span>
                 <span>R$ 61.99</span>
-                <label for="quantidade">Quantidade: <input amount valueBook="61.99" type="number" value="1" min="1" max="10"></label>  
+                <label for="quantidade">Quantidade: <input amount valueBook="61.99" type="number" value="1" min="1" max="10"><i button-delete="14" class="fa-solid fa-trash-can delete" alt="delete"></i></label>  
+                
             </div>
-            <button class="delete" button-delete="14"><i button-delete="14" class="fa-solid fa-trash-can"></i></button>
             </section>
             <section class="flex-center-books-cart" value="35">
                 <img src="./IMAGES/bovary.jpg" alt="Madame Bovary">
                 <div class="flex-center-content-books-cart">
                 <span>Madame Bovary</span>
                 <span><strong>R$ 35.00</strong></span>
-                <label for="quantidade">Quantidade: <input amount valueBook="35" type="number" value="1" min="1" max="10"></label>  
+                <label for="quantidade">Quantidade: <input amount valueBook="35" type="number" value="1" min="1" max="10"><i button-delete="15" class="fa-solid fa-trash-can delete" alt="delete"d></i></label>  
             </div>
-            <button class="delete" button-delete="15"><i button-delete="15" class="fa-solid fa-trash-can"></i></button>
             </section>
             <section>
-                <div>VALOR TOTAL:<span totalBooks>R$0.00</span></div>
+                <div>VALOR TOTAL:<span class='totalBooks'>R$0.00</span></div>
             </section>
         </div>
         </div>

@@ -174,20 +174,40 @@ function searchForLecture(e) {
 const linksLectures = document.querySelectorAll('.lecture')
 linksLectures.forEach(item => item.addEventListener('click', searchForLecture))
 
+
 /*--------------------------------TOGGLE BUTTON SHOP CART-----------------------------------*/
-const buttonClosedCart = document.querySelector('[closed-cart]')
+
+const buttonClosedCart = document.querySelector('.closed-cart')
 const cartShopping = document.querySelector('[cart-shopping]')
+const cartShoppingResponsive = document.querySelector('[cart-shopping-responsive]')
 const cart = document.querySelector('[openCart]')
 buttonClosedCart.addEventListener('click', closedCart)
 cartShopping.addEventListener('click', openCart)
+cartShoppingResponsive.addEventListener('click',openCartResponsive)
+
+
 
 function openCart() {
+  
+  
   document.querySelector('.container-books-cart').style.display = 'grid'
-  setTimeout(() => cart.style.width = '29rem', 200)
+   
+     setTimeout(() => cart.style.width = '25%', 50)
+     setTimeout(() => document.querySelector('body').style.width = `75%`, 50)
+     setTimeout(() => document.querySelector('.nav-header').style.width = `75%`, 50)
+
+}
+
+function openCartResponsive(){
+  document.querySelector('.container-books-cart').style.display = 'grid'
+  
+  setTimeout(() => cart.style.width = '25rem', 50)
 }
 
 function closedCart() {
   cart.style.width = '0rem'
+  document.querySelector('body').style.width = '100%'
+  document.querySelector('.nav-header').style.width = '100%'
 }
 
 //BUTTON INPUT BOOK TO CART
@@ -196,7 +216,8 @@ const allBooksCart = document.querySelectorAll('[openCart] section')
 const amount = document.querySelectorAll('[amount]')
 const allButtonsCart = document.querySelectorAll('#books button')
 allButtonsCart.forEach((button) => button.addEventListener('click', inputBookCart))
-const totalShopCart = document.querySelector('.numberCart')
+const totalShopCart = document.querySelector('#numberCart')
+const totalShopCartResponsive = document.querySelector('#numberCartResponsive')
 
 
 function inputBookCart(e) {
@@ -207,11 +228,12 @@ function inputBookCart(e) {
       allBooksCart[i].style.display = 'flex'
       amount[i].value = 1
     }
+  
   })
 }
 
 
-const deleteCart = document.querySelectorAll('.delete')
+const deleteCart = document.querySelectorAll('[button-delete]')
 deleteCart.forEach(button => button.addEventListener('click', deleteBookCart))
 
 function deleteBookCart(e) {
@@ -222,6 +244,19 @@ function deleteBookCart(e) {
     }
   })
 }
+
+
+
+setInterval(() => {
+  let totalShop = 0
+  allBooksCart.forEach((item, i) => {
+    if(allBooksCart[i].style.display == 'flex'){
+      totalShop += 1
+    }
+  }
+  
+)
+totalShopCartResponsive.innerHTML = totalShop})
 
 setInterval(() => {
   let totalShop = 0
@@ -250,8 +285,7 @@ function limitNumber(e) {
 
 
 /*--------------------------------TOTAL VALUE-----------------------------------*/
-const totalBooks = document.querySelector('[totalBooks]')
-
+const totalBooks = document.querySelector('.totalBooks')
 
 
 setInterval(() => {
@@ -271,4 +305,4 @@ setInterval(() => {
     }
   })
   totalBooks.innerHTML = ` R$${total.toFixed(2)}`
-}, 300)
+}, 300) 

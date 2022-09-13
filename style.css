@@ -12,10 +12,10 @@ body {
     color: rgb(217, 209, 209);
     font-family: "Roboto", sans-serif;
     width: 100%;
-    box-sizing: border-box;
     background-color: rgb(37, 36, 36, 0.1);
     z-index: 1;
-    overflow: hidden
+    overflow: hidden;
+    transition: all 0.3s linear
 }
 
 .closed {
@@ -31,21 +31,6 @@ body {
     width: 2rem;
 }
 
-@media screen and (max-width:551px) {
-    .closed {
-        position: relative;
-        top: -62rem;
-        left: 29rem;
-        font-size: 3rem;
-        background-color: black;
-        padding: 0.5rem 1.5rem;
-        border-radius: 50%;
-        border: rgb(217, 209, 209) solid 2px;
-        cursor: pointer;
-        width: 2rem;
-    }
-
-}
 
 /*---------------------------------------------------------------------*/
 /*----------------------------START COUNTDOWN--------------------------*/
@@ -66,21 +51,6 @@ body {
     text-align: center;
 }
 
-@media screen and (max-width:650px) {
-    .closed {
-        position: relative;
-        top: -50rem;
-        left: 19rem;
-        font-size: 3rem;
-        background-color: black;
-        padding: 0.5rem 1.5rem;
-        border-radius: 50%;
-        border: rgb(217, 209, 209) solid 2px;
-        cursor: pointer;
-        width: 2rem;
-    }
-}
-
 /* CONTENT */
 .container-one {
     display: flex;
@@ -94,7 +64,7 @@ body {
     background-color: rgb(37, 36, 36);
     border-radius: 4px;
     z-index: 10;
-    position: fixed
+    position: fixed;
 }
 
 .center-promotion {
@@ -112,29 +82,6 @@ body {
     z-index: 2
 }
 
-@media screen and (max-width:650px) {
-    .container-one {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 20.5rem;
-        height: 48rem;
-    }
-
-    .container-two {
-        width: 22rem;
-        margin-bottom: 10rem;
-        text-align: center;
-    }
-
-    .flex-countdown {
-        display: flex;
-        gap: 1.5rem !important;
-        background-color: rgb(37, 36, 36) !important;
-    }
-
-}
-
 
 /*DESCRIPTION*/
 
@@ -143,22 +90,8 @@ body {
 
 }
 
-@media screen and (max-width:650px) {
-    .image-book {
-        width: 8rem;
-        height: 12rem;
-    }
-}
-
 .container-two {
     margin-top: 2rem;
-}
-
-@media screen and (max-width:650px) {
-    .container-two {
-        margin-bottom: 2rem;
-        margin-top: -3rem
-    }
 }
 
 .container-two h1 {
@@ -201,6 +134,7 @@ body {
     background-color: black;
     border-radius: 4px;
     color: white;
+
 }
 
 .flex-countdown div {
@@ -236,7 +170,7 @@ body {
     background-color: rgb(37, 36, 36);
     color: white;
     border-bottom: 3px solid rgb(37, 36, 36);
-
+    transition: all 0.3s linear
 }
 
 .logo {
@@ -270,13 +204,19 @@ body {
     transition: all 0.5s linear
 }
 
+.login {
+    font-size:2rem;
+    position: relative;
+    bottom:.2rem
+}
+
 .button {
     background-color: rgb(37, 36, 36);
     color: rgb(217, 209, 209);
     border: none;
     font-size: 2.2rem;
     display: none;
-    margin-right: 0.1rem;
+
 }
 
 
@@ -306,7 +246,8 @@ body {
     background-color: rgb(217, 209, 209);
     color: rgb(37, 36, 36);
     justify-content: center;
-    height: 4rem;
+    height: 5rem;
+
 }
 
 .flex-navbar-two p {
@@ -325,7 +266,7 @@ body {
 .flex-literatura a {
     text-decoration: none;
     color: rgb(76, 75, 75);
-    transition: all 0.3s linear
+    transition: all 0.3s linear;
 }
 
 .flex-literatura a:hover {
@@ -347,137 +288,45 @@ body {
 }
 
 
-.cartAmount{
+.cartAmount {
     position: relative;
-    top:1.1rem;
+    top: 1.1rem;
     cursor: pointer;
+    left: 30px
 }
 
-.numberCart {
+.cartAmountResponsive {
+    font-size: 0px;
+    display: none
+}
+
+#numberCart {
     position: relative;
     top: -4rem;
     left: 1.6rem;
     font-size: 1rem;
     background-color: rgb(217, 209, 209);
-    color: rgb(76, 75, 75);
+    color: rgb(62, 60, 60);
     padding: 0.7rem 0.6rem;
     border-radius: 50%;
     font-weight: bolder;
     text-align: center;
-    width:1.1rem;
+    width: 1.1rem;
     border: rgb(76, 75, 75) solid 1px;
 }
-
-
-@media(max-width: 900px) {
-    .lupa-flex {
-        display: flex;
-        align-items: center;
-        font-size: 2rem;
-        gap: 1px;
-        justify-content: center;
-        margin-right: 0.5rem;
-        padding-bottom: 1rem;
-    }
-
-    .fa-magnifying-glass {
-        margin-left: 0.5rem;
-        color: rgb(217, 209, 209);
-    }
-
-    .lupa {
-        display: flex;
-        width: 70vw;
-        padding: 1rem 0;
-        background-color: rgb(217, 209, 209);
-        border-radius: 4px;
-    }
-
-    .logo {
-        margin-top: -2rem;
-        font-size: 1.2rem;
-        margin-left: -5rem;
-
-    }
-
-    .flex-navbar-two {
-        overflow: hidden;
-        height: 0px;
-        justify-content: flex-start;
-        margin-left: -4rem;
-        transition: all 0.5s linear;
-    }
-
-    .expand {
-        height: 20rem;
-        background-color: rgb(37, 36, 36);
-        transition: all 0.5s linear;
-    }
-
-    .flex-literatura {
-        display: flex;
-        flex-direction: column;
-        gap: 2rem;
-        transition: all 0.3s linear
-    }
-
-    .flex-literatura a {
-        color: rgb(217, 209, 209);
-        font-weight: bolder;
-    }
-
-    .flex-literatura a:hover {
-        color: rgb(255, 255, 255);
-        font-weight: bolder;
-    }
-
-    .header-center {
-        display: flex;
-        justify-content: space-between;
-        margin-top: 1rem;
-        width: 100%;
-        padding-bottom: 1rem;
-        align-items: center;
-    }
-
-    .button {
-        display: flex;
-        justify-content: flex-end;
-        transition: all 0.3s linear;
-        cursor: pointer;
-        margin-right: 1.3rem;
-    }
-
-    .button:hover {
-        transform: rotate(180deg)
-    }
-
-    .flex-search {
-        display: none;
-    }
-
-    .link-flex {
-        display: flex;
-        width: 80vw;
-        justify-content: flex-end;
-
-    }
-
-}
-
 
 /*------------------------------------------------------------------*/
 /*----------------------------START MAIN----------------------------*/
 /*------------------------------------------------------------------*/
 
-
 .flex-container-books {
-    margin: 15rem auto;
+    margin: 17rem auto;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
     align-items: center;
     row-gap: 3rem;
     column-gap: 1rem;
+    width: 97%
 }
 
 .flex-book {
@@ -527,7 +376,6 @@ body {
 }
 
 #book-promotion {
-    border: 3px solid black;
     width: 20.1rem
 }
 
@@ -563,69 +411,7 @@ body {
 }
 
 
-@media screen and (max-width:450px) {
-    .flex-container-books {
-        grid-template-columns: repeat(1, 4rem);
-        justify-content: flex-start;
-        border: rgb(76, 75, 75, 0.1) solid 1px;
-    }
 
-    .flex-book {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        border: rgb(76, 75, 75, 0.1) solid 1px;
-        width: 99vw;
-        height: 15.5rem;
-        gap: 1rem
-    }
-
-    .flex-content-book {
-        display: grid;
-        justify-content: center;
-        height: 16rem;
-        grid-template-rows: 7rem 5.5rem
-    }
-
-    .flex-book img {
-        width: 8rem;
-        height: 13rem;
-        background-color: rgb(250, 249, 248);
-        padding: 0 1.5rem
-    }
-
-    .flex-book p:nth-child(2) {
-        display: none;
-    }
-
-    .flex-book p:nth-child(3) {
-        display: none;
-    }
-
-    .flex-content-promotion-book {
-        display: grid;
-        grid-template-rows: 5rem 1rem 1rem;
-        margin-top: -1rem
-    }
-
-    #book-promotion {
-        border: 3px solid black;
-        width: 98vw;
-    }
-
-    #book-promotion p:nth-child(2) {
-        display: block;
-        margin-top: -1rem;
-    }
-
-    #book-promotion p:nth-child(3) {
-        display: none;
-    }
-
-    #book-promotion p:nth-child(4) {
-        display: none;
-    }
-}
 
 
 /*------------------------------------------------------------------*/
@@ -634,23 +420,35 @@ body {
 
 .flex-cart-closed {
     display: flex;
-    
+    align-items: center;
     justify-content: space-between;
 
+}
+
+.bookIcon{
+    color:white;
+    font-size: 3rem;
+    margin-left:1rem;
 }
 
 .flex-cart-closed div {
     font-size: 2.5rem;
     cursor: pointer;
+    
+}
+
+.flex-cart-closed h1{
+   font-weight: bold;
+   width: 12rem;
+   color: white
 }
 
 .container-books-cart {
     display: none;
     position: fixed;
-    z-index: 1;
     top: 0;
     right: 0;
-    background-color: rgb(117, 114, 114);
+    background-color: rgb(76, 75, 75);
     color: rgb(248, 240, 240);
     height: 100%;
     width: 0;
@@ -671,17 +469,19 @@ body {
     width: 4rem
 }
 
-.flex-center-books-cart{
-    background-color: rgb(61, 59, 59);
+.flex-center-books-cart {
+    background-color: rgb(121, 119, 119);
     display: none;
     justify-content: flex-start;
     align-items: center;
     gap: 1rem;
     border-bottom: 1px solid white;
-    height:9rem
+    height: 10rem;
+    width: 100%;
+    color: white
 }
 
-.testando{
+.testando {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -689,22 +489,333 @@ body {
     gap: 1rem
 }
 
-.flex-center-content-books-cart{
+.flex-center-content-books-cart {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    
+    gap: 0.5rem
 }
 
-.flex-center-content-books-cart span:nth-child(2){
-  font-weight: normal;
-  font-size: 1.5rem;
+.flex-center-content-books-cart span:nth-child(2) {
+    font-weight: normal;
+    font-size: 1.5rem;
 }
 
 .delete {
-    font-size: 1.7rem;
-    position: absolute;
-    right: 1rem;
-    margin-top: 3rem;
+    font-size: 1.6rem;
+    margin-left: 0.5rem;
     cursor: pointer;
+}
+
+.totalBooks {
+    font-size: 2rem;
+    color: white
+}
+
+/*MEDIA QUERY*/
+
+
+
+@media(min-width: 1600px) {
+    html {
+        font-size: 75%
+    }
+}
+
+@media(max-width: 1000px) {
+    html {
+        font-size: 50%
+    }
+
+    .flex-book button {
+        font-size: 1.3rem
+    }
+}
+
+
+
+@media screen and (max-width:610px) {
+    html {
+        font-size: 60%
+    }
+
+    .cartAmount {
+        font-size: 0px;
+
+    }
+
+    .cartAmountResponsive {
+        position: relative;
+        display: block;
+        font-size: 2rem;
+        cursor: pointer;
+        top:1.25rem;
+        left:1rem
+    }
+
+    #numberCartResponsive {
+        position: relative;
+        top: -4rem;
+        left: 1.6rem;
+        font-size: 1rem;
+        background-color: rgb(217, 209, 209);
+        color: rgb(62, 60, 60);
+        padding: 0.7rem 0.6rem;
+        border-radius: 50%;
+        font-weight: bolder;
+        text-align: center;
+        width: 1.1rem;
+        border: rgb(76, 75, 75) solid 1px;
+    }
+
+    #numberCart {
+        display: none
+    }
+
+
+    #description {
+        display: none;
+    }
+
+    .text {
+        font-size: 0.8rem
+    }
+
+    .closed {
+        position: relative;
+        top: -29rem;
+        left: 20rem;
+        font-size: 1.5rem;
+        background-color: black;
+        padding: 0.5rem 0.5rem;
+        border-radius: 50%;
+        border: rgb(217, 209, 209) solid 2px;
+        cursor: pointer;
+
+    }
+
+    .container-one {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 18rem;
+        height: 25.5rem;
+    }
+
+    .container-two {
+        width: 22rem;
+        text-align: center;
+    }
+
+    .container-two h1 {
+        font-size: 1.2rem;
+    }
+
+    .container-two h2 {
+        font-size: 1rem;
+    }
+
+    .price {
+        font-size: 1.3rem;
+    }
+
+    .flex-countdown {
+        display: flex;
+        gap: 1.5rem !important;
+        background-color: rgb(37, 36, 36) !important;
+    }
+
+    .flex-countdown h3 {
+        font-size: 1.2rem;
+    }
+
+    .flex-countdown span {
+        font-size: 1rem;
+    }
+
+    .image-book {
+        width: 5rem;
+        height: 7rem;
+    }
+
+    .container-two {
+        margin-bottom: 2rem;
+        margin-top: -3rem
+    }
+
+    .lupa-flex {
+        display: flex;
+        align-items: center;
+        font-size: 2rem;
+        gap: 1px;
+        justify-content: flex-end;
+        padding-bottom: 1rem;
+        margin-top: 3rem;
+        margin-right: 2rem;
+    }
+
+    .fa-magnifying-glass {
+        margin-left: 0.5rem;
+        color: rgb(217, 209, 209);
+    }
+
+    .lupa {
+        display: flex;
+        width: 95vw;
+        padding: 0.5rem 0;
+        background-color: rgb(217, 209, 209);
+        border-radius: 4px;
+    }
+
+    .logo {
+        margin-top: -1rem;
+        width: 7rem;
+        margin-left: -5rem;
+
+    }
+
+    .flex-navbar-two {
+        overflow: hidden;
+        height: 0px;
+        justify-content: flex-start;
+        margin-left: -4rem;
+        transition: all 0.5s linear;
+
+    }
+
+    .expand {
+        height: 20rem;
+        background-color: rgb(37, 36, 36);
+        transition: all 0.5s linear;
+    }
+
+    .flex-literatura {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        transition: all 0.3s linear
+    }
+
+    .flex-literatura a {
+        color: rgb(217, 209, 209);
+        font-weight: bolder;
+    }
+
+    .flex-literatura a:hover {
+        color: rgb(255, 255, 255);
+        font-weight: bolder;
+    }
+
+    .header-center {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        padding-bottom: 1rem;
+        align-items: center;
+        height: 4rem;
+    }
+
+    .button {
+        display: flex;
+        position: relative;
+        justify-content: flex-end;
+        transition: all 0.3s linear;
+        cursor: pointer;
+        left: -1.4rem
+    }
+
+    .button:hover {
+        transform: rotate(180deg)
+    }
+
+    .flex-search {
+        display: none;
+    }
+
+    .link-flex {
+        display: flex;
+        width: 80vw;
+        justify-content: flex-end;
+
+    }
+
+    .nav-header {
+        padding-bottom: 1rem;
+    }
+
+    .flex-container-books {
+        row-gap: 1rem;
+        grid-template-columns: repeat(1, 4rem);
+        justify-content: flex-start;
+        border: none;
+        width: 100vw;
+    }
+
+    .flex-book {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        width: 95vw;
+        height: 15.5rem;
+        gap: 1rem;
+        border: rgb(76, 75, 75, 0.1) 1px solid
+    }
+
+    .flex-content-book {
+        display: grid;
+        justify-content: center;
+        grid-template-rows: 4rem 4rem
+    }
+
+    .flex-book img {
+        width: 5rem;
+        height: 8rem;
+        background-color: rgb(250, 249, 248);
+        padding: 0 1.5rem
+    }
+
+    .flex-book p:nth-child(2) {
+        display: none;
+    }
+
+    .flex-book p:nth-child(3) {
+        display: none;
+    }
+
+    .flex-content-promotion-book {
+        display: grid;
+        grid-template-rows: 5rem 1rem 1rem;
+        margin-top: -1rem
+    }
+
+    #book-promotion {
+        border: 1px solid black;
+        width: 94vw;
+    }
+
+    #book-promotion p:nth-child(2) {
+        display: block;
+        margin-top: -1rem;
+    }
+
+    #book-promotion p:nth-child(3) {
+        display: none;
+    }
+
+    #book-promotion p:nth-child(4) {
+        display: none;
+    }
+}
+
+@media screen and (max-width:800px) {
+    html {
+        font-size: 47%
+    }
+}
+
+@media screen and (max-width:300px) {
+    html {
+        font-size: 50%
+    }
+
 }
