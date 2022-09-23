@@ -73,13 +73,15 @@ body {
 }
 
 .transparent {
-    background-color: black;
-    position: absolute;
+    content: '';
+    position: fixed;
     height: 100%;
     width: 100%;
-    opacity: 0.5;
+    z-index: 1;
+    background: #1b1b32;
     background-size: cover;
-    z-index: 2
+    background-position: center;
+    opacity:.4
 }
 
 
@@ -422,6 +424,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    height:8rem
 
 }
 
@@ -444,7 +447,6 @@ body {
 }
 
 .container-books-cart {
-    display: none;
     position: fixed;
     top: 0;
     right: 0;
@@ -456,8 +458,8 @@ body {
     font-weight: bolder;
     overflow-y: scroll;
     transition: all 0.3s linear;
-    gap: 1.5rem;
     border-left: rgb(243, 237, 237) 4px solid;
+    
 }
 
 .container-books-cart input {
@@ -469,24 +471,21 @@ body {
     width: 4rem
 }
 
-.flex-center-books-cart {
-    background-color: rgb(121, 119, 119);
-    display: none;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 1rem;
-    border-bottom: 1px solid white;
-    height: 10rem;
-    width: 100%;
-    color: white
+.container-all-sections:last-child {
+background-color:red
 }
 
-.testando {
+
+.style-books-cart{
     display: flex;
-    flex-direction: column;
     justify-content: flex-start;
-    height: 90vh;
-    gap: 1rem
+    align-items: center;
+    border-bottom: 1px solid white;
+    padding: 1rem 0;
+    width: 100%;
+    color: white;
+    gap:1rem;
+    background-color: rgb(97, 94, 94);
 }
 
 .flex-center-content-books-cart {
@@ -505,6 +504,11 @@ body {
     font-size: 1.6rem;
     margin-left: 0.5rem;
     cursor: pointer;
+}
+
+.totalValue{
+    display: flex;
+    justify-content: flex-start;
 }
 
 .totalBooks {

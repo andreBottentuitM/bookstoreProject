@@ -65,6 +65,7 @@ deadline.textContent = limitDay >= 10 ? `até ${limitDay}/${limitMonth}/${limitY
 
 const limitMilliseconds = limitData.getTime()
 
+
 //RUNNING TIME
 function takeTheTime() {
 
@@ -183,24 +184,24 @@ const cartShoppingResponsive = document.querySelector('[cart-shopping-responsive
 const cart = document.querySelector('[openCart]')
 buttonClosedCart.addEventListener('click', closedCart)
 cartShopping.addEventListener('click', openCart)
-cartShoppingResponsive.addEventListener('click',openCartResponsive)
+cartShoppingResponsive.addEventListener('click', openCartResponsive)
 
 
 
 function openCart() {
-  
-  
+
+
   document.querySelector('.container-books-cart').style.display = 'grid'
-   
-     setTimeout(() => cart.style.width = '25%', 50)
-     setTimeout(() => document.querySelector('body').style.width = `75%`, 50)
-     setTimeout(() => document.querySelector('.nav-header').style.width = `75%`, 50)
+
+  setTimeout(() => cart.style.width = '25%', 50)
+  setTimeout(() => document.querySelector('body').style.width = `75%`, 50)
+  setTimeout(() => document.querySelector('.nav-header').style.width = `75%`, 50)
 
 }
 
-function openCartResponsive(){
+function openCartResponsive() {
   document.querySelector('.container-books-cart').style.display = 'grid'
-  
+
   setTimeout(() => cart.style.width = '25rem', 50)
 }
 
@@ -212,97 +213,77 @@ function closedCart() {
 
 //BUTTON INPUT BOOK TO CART
 const amountIcon = document.querySelector('[amountIcon]')
-const allBooksCart = document.querySelectorAll('[openCart] section')
-const amount = document.querySelectorAll('[amount]')
 const allButtonsCart = document.querySelectorAll('#books button')
 allButtonsCart.forEach((button) => button.addEventListener('click', inputBookCart))
 const totalShopCart = document.querySelector('#numberCart')
 const totalShopCartResponsive = document.querySelector('#numberCartResponsive')
+const allBooksInCart = document.querySelector('.container-all-sections')
+const testtt = document.querySelector('.container-all-sections section')
 
+
+let totalInputs = []
+let totalValueBooks = 0
+const sectionsContainer = document.querySelector('.container-all-sections')
 
 function inputBookCart(e) {
   let id = e.target.getAttribute('button-shop')
-  
-  amount.forEach((item, i) => {
-    if (i == id) {
-      allBooksCart[i].style.display = 'flex'
-      amount[i].value = 1
-    }
-  
+  let checkingEverySections = totalInputs.every(item => {
+    return parseInt(id) != item
   })
+
+  if (checkingEverySections) {
+
+    let element = document.createElement('section')
+    element.classList.add('style-books-cart')
+
+    element.innerHTML = `
+  <img src="${booksList[id].img}" alt="${booksList[id].name}">
+  <div class="flex-center-content-books-cart">
+  <span class="name">${booksList[id].name}</span>
+  <span class="priceCart">R$ ${booksList[id].price.toFixed(2)}</span>
+  <label for="quantidade">Quantidade: <input key="${id}" type="number" min="1" max="10" value="1"><i class="fa-solid fa-trash-can delete"></i></label>
+</div>`
+
+    const deleteButton = element.querySelector('.delete')
+    deleteButton.addEventListener('click', deleteItem)
+    sectionsContainer.appendChild(element)
+
+    totalInputs.push(id)
+    totalShopCart.innerHTML = totalInputs.length
+    totalShopCartResponsive.innerHTML = totalInputs.length
+  }
 }
 
-
-const deleteCart = document.querySelectorAll('[button-delete]')
-deleteCart.forEach(button => button.addEventListener('click', deleteBookCart))
-
-function deleteBookCart(e) {
-  let id = e.target.getAttribute('button-delete')
-  amount.forEach((item, i) => {
-    if (i == id) {
-      allBooksCart[i].style.display = 'none'
-    }
-  })
+const deleteItem = (e) => {
+  const itemDelete = e.currentTarget.parentElement.parentElement.parentElement
+  const gettingInput = e.target.previousElementSibling
+  const gettingId = gettingInput.getAttribute('key')
+  const gettingIndex = totalInputs.indexOf(gettingId)
+  totalInputs.splice(gettingIndex, 1)
+  sectionsContainer.removeChild(itemDelete)
+  totalShopCart.innerHTML = totalInputs.length
+  totalShopCartResponsive.innerHTML = totalInputs.length
 }
-
-
-
-setInterval(() => {
-  let totalShop = 0
-  allBooksCart.forEach((item, i) => {
-    if(allBooksCart[i].style.display == 'flex'){
-      totalShop += 1
-    }
-  }
-  
-)
-totalShopCartResponsive.innerHTML = totalShop})
-
-setInterval(() => {
-  let totalShop = 0
-  allBooksCart.forEach((item, i) => {
-    if(allBooksCart[i].style.display == 'flex'){
-      totalShop += 1
-    }
-  }
-  
-)
-totalShopCart.innerHTML = totalShop})
-
-//NUMBER LIMIT AT INPUT
-amount.forEach(input => input.addEventListener('keyup',limitNumber))
-function limitNumber(e) {
-  let input = e.target;
-  if(input.value > 10){
-      let adjusting = 10;
-      input.value = parseInt(adjusting)
-  }
-  if(input.value <= 0){
-    let adjusting = 1;
-      input.value = parseInt(adjusting)
-  }
-};
-
 
 /*--------------------------------TOTAL VALUE-----------------------------------*/
 const totalBooks = document.querySelector('.totalBooks')
 
-
 setInterval(() => {
+  const allInputs = document.querySelectorAll('[key]')
   let total = 0
-  amount.forEach((item, i) => {
-    let valueBook = item.getAttribute('valueBook')
+  allInputs.forEach((item) => {
+    let id = item.getAttribute('key')
     let units = item.value
+
     if (units > 10) {
-      units = 10
+      item.value = 10
     }
-    if (units < 0) {
-      units = 0
+    if (units < 1) {
+      item.value = 1
     }
-    
-    if (allBooksCart[i].style.display == 'flex') {
-      total += valueBook * units
-    }
+
+    total += booksList[id].price * units
+
   })
   totalBooks.innerHTML = ` R$${total.toFixed(2)}`
-}, 300) 
+}, 300)
