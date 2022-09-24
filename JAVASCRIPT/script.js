@@ -187,7 +187,6 @@ cartShopping.addEventListener('click', openCart)
 cartShoppingResponsive.addEventListener('click', openCartResponsive)
 
 
-
 function openCart() {
 
 
@@ -211,14 +210,69 @@ function closedCart() {
   document.querySelector('.nav-header').style.width = '100%'
 }
 
+//INPUT BOOKS IN THE PAGE
+
+function startingPage() {
+
+  let container = document.querySelector('.flex-container-books')
+  let promotion = `<section id="book-promotion" name="guerraepaz lievtolstoi" lecture="Literatura Russa">
+  <article>
+      <div class="flex-book">
+          <img src="./IMAGES/guerra e paz.jpg" alt="Guerra e paz">
+          <div class="flex-content-promotion-book">
+              <p class="promotion">PROMOÇÃO</p>
+              <p>Guerra e paz</p>
+              <p>Autor: Liev Tolstói</p>
+              <p>Formato: Capa dura</p>
+              <p>DE: <span id="old-price">R$67.99</span></p>
+              <P>POR: <span>R$30.00</span></P>
+              <button button-shop="0">
+                  <i button-shop="0" class="fa-solid fa-cart-shopping"></i>
+                  Carrinho</button>
+          </div>
+      </div>
+  </article>
+</section>`
+
+  container.innerHTML = promotion
+
+  booksList.forEach(item => {
+
+    let element = document.createElement('section')
+    if (item.id != 0) {
+      console.log(item.name)
+      element.setAttribute('name', item.filter)
+      element.setAttribute('lecture', item.lecture)
+      element.innerHTML = `<article>
+   <div class="flex-book">
+       <img src="${item.img}" alt="${item.name}">
+       <div class="flex-content-book">
+           <p>${item.name}</p>
+           <p>Autor: ${item.autor}</p>
+           <p>Formato: ${item.format}</p>
+           <P>POR: <span>R$${item.price.toFixed(2)}</span></P>
+           <button button-shop="${item.id}">
+               <i button-shop="${item.id}" class="fa-solid fa-cart-shopping"></i>
+               Carrinho</button>
+       </div>
+   </div>
+</article>`
+
+      container.appendChild(element)
+
+    }
+  })
+
+}
+
+startingPage()
+
 //BUTTON INPUT BOOK TO CART
-const amountIcon = document.querySelector('[amountIcon]')
 const allButtonsCart = document.querySelectorAll('#books button')
 allButtonsCart.forEach((button) => button.addEventListener('click', inputBookCart))
 const totalShopCart = document.querySelector('#numberCart')
 const totalShopCartResponsive = document.querySelector('#numberCartResponsive')
 const allBooksInCart = document.querySelector('.container-all-sections')
-const testtt = document.querySelector('.container-all-sections section')
 
 
 let totalInputs = []
@@ -287,3 +341,6 @@ setInterval(() => {
   })
   totalBooks.innerHTML = ` R$${total.toFixed(2)}`
 }, 300)
+
+
+

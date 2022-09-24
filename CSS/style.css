@@ -218,9 +218,8 @@ body {
     border: none;
     font-size: 2.2rem;
     display: none;
-
+    transition: all 0.3s linear
 }
-
 
 .search {
     padding: 1rem 0;
@@ -394,7 +393,12 @@ body {
     cursor: pointer;
     font-weight: bolder;
     background-color: rgb(76, 75, 75);
-    color: white
+    color: white;
+    transition: all 0.3s linear;;
+}
+
+.flex-book button:hover{
+    background-color: rgb(121, 115, 115);
 }
 
 
@@ -728,9 +732,6 @@ background-color:red
         left: -1.4rem
     }
 
-    .button:hover {
-        transform: rotate(180deg)
-    }
 
     .flex-search {
         display: none;
