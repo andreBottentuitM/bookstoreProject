@@ -12,7 +12,7 @@
 
 <body page>
     <!--COUNTDOWN-->
-    <div class="transparent"></div>
+   <div class="transparent"></div>
     <div class="center-promotion">
         <section class="container-one">
             <article>
@@ -50,21 +50,20 @@
         <nav>
             <div class="header-center">
                 <a href=""><img src="./IMAGES/logo.png" alt="logotipo" class="logo"></a>
-                <div class="flex-search">
-                    <input class="search" type="search" search="books">
-                    <i lupa class="fa-solid fa-magnifying-glass"></i>
-                </div>
                 <ul class="link-flex">
-                    <li><a cart-shopping><i class="fa-solid fa-cart-shopping cartAmount">
-                                <div id="numberCart">0</div>
-                            </i></a></li>
+                    <li class="flex-search"><input class="search" type="search" search="books">
+                        <i lupa class="fa-solid fa-magnifying-glass"></i></li>
+                    <li class="cartAmount"><a cart-shopping><i class="fa-solid fa-cart-shopping">
+                    </i></a> </li>
+                    <div id="numberCart">0</div>
                     <li><a cart-shopping-responsive><i class="fa-solid fa-cart-shopping cartAmountResponsive">
-                                <div id="numberCartResponsive">0</div>
-                            </i></a></li>
-                    <li><a href=""><i class="fa-solid fa-user login"></i></a></li>
+                            </i></li>
+                        </a><div id="numberCartResponsive">0</div>
+                    <li class="login"><a href="./login.html"><i class="fa-solid fa-user"></i></a></li>
                 </ul>
                 <button class="button"><i class="fa-solid fa-bars"></i></button>
             </div>
+            
             <div class="flex-navbar-two">
                 <ul class="flex-literatura">
                     <li class="lecture"><a>Literatura Russa</a></li>
@@ -81,6 +80,7 @@
         </section>
     </header>
     <main class="flex-container-books" id="books">
+        
           <!--LIST OF BOOKS-->
     </main> 
     <aside>
@@ -100,6 +100,9 @@
             </div>
         </div>
     </aside>
+    <footer>
+        <p>Produced by André Bottentuit</p>
+    </footer>
     <script src="./javascript/books.js"></script>
     <script src="./javascript/script.js"></script>
 </body>

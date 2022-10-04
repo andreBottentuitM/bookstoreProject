@@ -73,7 +73,6 @@ body {
 }
 
 .transparent {
-    content: '';
     position: fixed;
     height: 100%;
     width: 100%;
@@ -165,7 +164,6 @@ body {
 
 .nav-header {
     position: fixed;
-    top: 0;
     color: black;
     margin-top: -1rem;
     width: 100vw;
@@ -190,8 +188,9 @@ body {
 
 .link-flex {
     display: flex;
+    justify-content: flex-end;
     list-style-type: none;
-    gap: 3rem;
+    gap:.2rem;
     margin-right: 5rem;
     align-items: center;
 }
@@ -199,17 +198,15 @@ body {
 .link-flex a {
     color: rgb(217, 209, 209);
     font-size: 2.2rem;
+    transition: all 0.3s linear
 }
 
 .link-flex a:hover {
     color: white;
-    transition: all 0.5s linear
 }
 
 .login {
     font-size:2rem;
-    position: relative;
-    bottom:.2rem
 }
 
 .button {
@@ -222,21 +219,22 @@ body {
 }
 
 .search {
-    padding: 1rem 0;
+    padding: .6rem 0;
     border-radius: 4px;
+    max-width:30rem;
     background-color: rgb(217, 209, 209);
-    width: 80%;
+   
 }
 
 .flex-search {
     display: flex;
+
     align-items: center;
-    font-size: 3rem;
+    font-size: 2.5rem;
     gap: .7rem;
-    text-align: right;
     color: rgb(217, 209, 209);
-    width: 100vw;
-    justify-content: center;
+    top:.1rem;
+    margin-bottom:0.5rem;
 }
 
 .flex-navbar-two {
@@ -280,20 +278,17 @@ body {
     align-items: center;
     font-size: 2rem;
     gap: 4rem;
-    justify-content: center;
-    margin-right: 0.5rem;
+ 
 }
 
 .fa-magnifying-glass {
     cursor: pointer;
 }
 
-
-.cartAmount {
+.cartAmount{
     position: relative;
-    top: 1.1rem;
+    left: 1.3rem;
     cursor: pointer;
-    left: 30px
 }
 
 .cartAmountResponsive {
@@ -303,17 +298,21 @@ body {
 
 #numberCart {
     position: relative;
-    top: -4rem;
-    left: 1.6rem;
-    font-size: 1rem;
+    bottom:2rem;
+    font-size: 1.2rem;
     background-color: rgb(217, 209, 209);
     color: rgb(62, 60, 60);
-    padding: 0.7rem 0.6rem;
+    display: flex;
+    justify-content: center;
     border-radius: 50%;
     font-weight: bolder;
-    text-align: center;
-    width: 1.1rem;
+    padding: 4px 4px;
+    width:1.5rem;
     border: rgb(76, 75, 75) solid 1px;
+}
+
+#numberCartResponsive{
+    display: none;
 }
 
 /*------------------------------------------------------------------*/
@@ -321,7 +320,7 @@ body {
 /*------------------------------------------------------------------*/
 
 .flex-container-books {
-    margin: 17rem auto;
+    margin: 17rem auto 0rem;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
     align-items: center;
@@ -394,7 +393,8 @@ body {
     font-weight: bolder;
     background-color: rgb(76, 75, 75);
     color: white;
-    transition: all 0.3s linear;;
+    transition: all 0.3s linear;
+    font-size: 1.3rem
 }
 
 .flex-book button:hover{
@@ -520,8 +520,28 @@ background-color:red
     color: white
 }
 
-/*MEDIA QUERY*/
+/*------------------------------------------------------------------*/
+/*-------------------------------FOOTER-----------------------------*/
+/*------------------------------------------------------------------*/
 
+footer {
+   position: relative;
+   background-color: rgb(37, 36, 36);
+   padding: 2.5rem 0;
+   border-top:rgb(248, 240, 240) 2px solid;
+   bottom:0;
+   width: 100%
+}
+
+footer p {
+   color: rgb(248, 240, 240);
+   text-align: center;
+   font-size: 2rem;
+   font-weight: bolder;
+}
+
+
+/*MEDIA QUERY*/
 
 
 @media(min-width: 1600px) {
@@ -530,49 +550,47 @@ background-color:red
     }
 }
 
-@media(max-width: 1000px) {
+
+
+
+@media screen and (max-width:1000px) {
     html {
-        font-size: 50%
+        font-size: 55%
     }
 
-    .flex-book button {
-        font-size: 1.3rem
-    }
+
+   
 }
 
-
-
-@media screen and (max-width:610px) {
+@media screen and (max-width:750px) {
     html {
-        font-size: 60%
+        font-size: 70%
     }
 
     .cartAmount {
-        font-size: 0px;
-
+        display: none;
     }
 
     .cartAmountResponsive {
         position: relative;
+        left:1rem;
         display: block;
         font-size: 2rem;
         cursor: pointer;
-        top:1.25rem;
-        left:1rem
     }
 
     #numberCartResponsive {
+        display: flex;
         position: relative;
-        top: -4rem;
-        left: 1.6rem;
-        font-size: 1rem;
+        font-size: 1.2rem;
         background-color: rgb(217, 209, 209);
         color: rgb(62, 60, 60);
-        padding: 0.7rem 0.6rem;
         border-radius: 50%;
         font-weight: bolder;
-        text-align: center;
-        width: 1.1rem;
+        justify-content: center;
+        width: 2rem;
+        bottom:1.2rem;
+        padding:0.3rem 0;
         border: rgb(76, 75, 75) solid 1px;
     }
 
@@ -653,13 +671,14 @@ background-color:red
 
     .lupa-flex {
         display: flex;
+        justify-content: flex-end;
         align-items: center;
         font-size: 2rem;
         gap: 1px;
-        justify-content: flex-end;
-        padding-bottom: 1rem;
+        width:80%;
+        margin:0 auto;
         margin-top: 3rem;
-        margin-right: 2rem;
+      
     }
 
     .fa-magnifying-glass {
@@ -668,11 +687,11 @@ background-color:red
     }
 
     .lupa {
-        display: flex;
-        width: 95vw;
+        width: 90vw;
         padding: 0.5rem 0;
         background-color: rgb(217, 209, 209);
         border-radius: 4px;
+        justify-content: center;
     }
 
     .logo {
@@ -686,38 +705,41 @@ background-color:red
         overflow: hidden;
         height: 0px;
         justify-content: flex-start;
-        margin-left: -4rem;
-        transition: all 0.5s linear;
-
+        transition: all 0.3s linear;
+        
     }
 
+
+
     .expand {
-        height: 20rem;
-        background-color: rgb(37, 36, 36);
-        transition: all 0.5s linear;
+        background-color: rgb(56, 55, 55);
+        height: 14rem;
     }
 
     .flex-literatura {
         display: flex;
         flex-direction: column;
-        gap: 2rem;
-        transition: all 0.3s linear
+        gap: 1.2rem;
+        width:100%
     }
+    
 
     .flex-literatura a {
-        color: rgb(217, 209, 209);
         font-weight: bolder;
+        font-size: 1.7rem;
+        width:100%;
+        color:rgb(215, 201, 201)
     }
 
     .flex-literatura a:hover {
-        color: rgb(255, 255, 255);
+        color:rgb(255, 255, 255);
         font-weight: bolder;
     }
 
     .header-center {
         display: flex;
-        justify-content: space-between;
-        width: 100%;
+        margin:0 auto;
+        width: 81%;
         padding-bottom: 1rem;
         align-items: center;
         height: 4rem;
@@ -725,11 +747,7 @@ background-color:red
 
     .button {
         display: flex;
-        position: relative;
-        justify-content: flex-end;
-        transition: all 0.3s linear;
         cursor: pointer;
-        left: -1.4rem
     }
 
 
@@ -740,7 +758,7 @@ background-color:red
     .link-flex {
         display: flex;
         width: 80vw;
-        justify-content: flex-end;
+        align-items: center;
 
     }
 
@@ -753,7 +771,7 @@ background-color:red
         grid-template-columns: repeat(1, 4rem);
         justify-content: flex-start;
         border: none;
-        width: 100vw;
+        width: 100%;
     }
 
     .flex-book {
@@ -812,15 +830,9 @@ background-color:red
     }
 }
 
-@media screen and (max-width:800px) {
-    html {
-        font-size: 47%
-    }
-}
-
 @media screen and (max-width:300px) {
     html {
-        font-size: 50%
+        font-size: 60%
     }
 
 }

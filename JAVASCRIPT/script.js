@@ -1,3 +1,4 @@
+
 /*--------------------------------CLOSE BUTTON-----------------------------------*/
 const closeButton = document.querySelector('.closed')
 const transparency = document.querySelector('.transparent')
@@ -111,8 +112,8 @@ const navToggle = document.querySelector(".button")
 const links = document.querySelector(".flex-navbar-two")
 
 navToggle.addEventListener("click", function () {
-
-
+  
+ 
   links.classList.toggle("expand");
 });
 
@@ -127,16 +128,24 @@ function GettingSearch(input, valueOfAttribute) {
       else
         di.style.display = "none"
     }
+    
   }
   this.enterSearch = function (event) {
     if (event.key === "Enter") {
       event.preventDefault();
+      let container = document.querySelector('.flex-container-books')
+      let totalNone = 0
       for (di of valueOfAttribute.children) {
         let textInput = input.value.toLowerCase().normalize('NFD').replace(/([\u0300-\u036f]|[^0-9a-zA-Z])/g, '')
-        if (di.getAttribute("name").includes(textInput))
+        if (di.getAttribute("name").includes(textInput)){
           di.style.display = 'block'
-        else
+        }else{
           di.style.display = "none"
+          totalNone += 1
+        }
+        }
+        if(totalNone == 16){
+          
       }
     }
   }
@@ -240,7 +249,6 @@ function startingPage() {
 
     let element = document.createElement('section')
     if (item.id != 0) {
-      console.log(item.name)
       element.setAttribute('name', item.filter)
       element.setAttribute('lecture', item.lecture)
       element.innerHTML = `<article>

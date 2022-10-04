@@ -1,0 +1,114 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto:400,700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap');
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    color: rgb(37, 36, 36);
+    font-family: "Roboto", sans-serif;
+    width: 100%;
+    background-color: rgb(252, 245, 245);
+}
+
+header {
+    background-color: rgb(37, 36, 36);
+    width: 100%;
+    padding: 1rem 0;
+}
+
+img {
+    display: block;
+    margin: 0rem auto
+}
+
+main {
+    display: flex;
+
+}
+
+.login {
+    max-width: 40rem;
+    max-height: 30rem;
+    text-align: center;
+    border: rgb(76, 75, 75, 0.3) solid 2px;
+    padding: 1rem 3rem 3rem 3rem;
+    margin: 8rem auto;
+    font-size: 2rem;
+    background-color: rgb(214, 209, 209);
+    border-radius: 4px
+}
+
+.create-login a {
+    text-decoration: none;
+    color: rgb(86, 84, 84);
+    font-weight: 400;
+    transition: all 0.3s linear;
+    font-weight: bolder;
+}
+
+.create-login a:hover {
+    color: black;
+}
+
+.email {
+    margin-bottom: 1.5rem
+}
+
+.login input {
+    padding: .8rem 0;
+    width: 25rem;
+    font-size: 1.5rem;
+    outline: none;
+    border: 1px solid rgb(37, 36, 36, .4);
+    border-radius: 3px;
+}
+
+input:focus {
+    border: rgb(37, 36, 36) 1px solid
+}
+
+.login button {
+    margin: 3rem 0;
+    width: 25.5rem;
+    padding: 1rem 0;
+    cursor: pointer;
+    border: none;
+    background-color: rgb(38, 37, 37);
+    color: white;
+    font-size: 2rem;
+    font-weight: bolder;
+    border-radius: 4px;
+    transition: all 0.3s linear
+}
+
+.login button:hover {
+    background-color: rgb(38, 37, 37, 0.7);
+}
+
+.line {
+    height: 60rem;
+    background-color: rgb(214, 200, 200);
+    width: 1px;
+    margin: 1rem 10rem
+}
+
+footer {
+    position: relative;
+    background-color: rgb(37, 36, 36);
+    padding: 2.5rem 0;
+    border-top: rgb(248, 240, 240) 2px solid;
+    bottom: 0;
+    width: 100%
+}
+
+footer p {
+    color: rgb(248, 240, 240);
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bolder;
+}

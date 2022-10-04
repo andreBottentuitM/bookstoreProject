@@ -1,0 +1,172 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto:400,700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap');
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    color: rgb(37, 36, 36);
+    font-family: "Roboto", sans-serif;
+    width: 100%;
+    background-color: rgb(252, 245, 245);
+}
+
+header {
+    background-color: rgb(37, 36, 36);
+    width: 100%;
+    padding: 1rem 0;
+}
+
+img {
+    display: block;
+    margin: 0rem auto
+}
+
+section h1 {
+    text-align: center;
+    font-size: 3rem;
+    margin: 2.7rem 0 2rem;
+}
+
+.container-registration input {
+    padding: 1.3rem 0;
+    outline: none;
+    width: 20rem;
+    font-size: 1.5rem;
+    border: 2px solid rgba(28, 28, 28, 0.5);
+    border-radius: 3px;
+    padding-left: .6rem;
+}
+
+.container-inputs input:focus {
+    border: 2px black solid
+}
+
+.container-inputs {
+    display: grid;
+    grid-template-areas:
+        'nome cpf'
+        'data telefone'
+        'email email'
+        'senha confirmar'
+        'cep cep'
+        'rua numero'
+        'complemento bairro'
+        'cidade estado';
+    column-gap: 2rem;
+    row-gap: 1rem;
+    justify-content: center;
+}
+
+.nome {
+    grid-area: nome;
+}
+
+.cpf {
+    grid-area: cpf;
+}
+
+.data {
+    grid-area: data;
+}
+
+.tel {
+    grid-area: telefone;
+}
+
+.email {
+    grid-area: email;
+    margin: 0 auto
+}
+
+.password {
+    grid-area: senha;
+}
+
+.confirmar {
+    grid-area: confirmar;
+}
+
+.cep {
+    grid-area: cep;
+    margin: 0 auto
+}
+
+.rua {
+    grid-area: rua;
+}
+
+.numero {
+    grid-area: numero;
+}
+
+.complemento {
+    grid-area: complemento;
+}
+
+.bairro {
+    grid-area: bairro;
+}
+
+.cidade {
+    grid-area: cidade;
+}
+
+.estado {
+    grid-area: estado;
+}
+
+#email {
+    width: 43rem
+}
+
+#cep {
+    width: 43rem
+}
+
+.container-registration {
+    margin: 5rem auto;
+    background-color: rgb(214, 209, 209);
+    border: 1px solid black;
+    width: 50rem;
+
+}
+
+button {
+    display: block;
+    width: 43.4rem;
+    background-color: rgb(38, 37, 37);
+    padding: 1.5rem 0;
+    font-size: 2rem;
+    font-weight: bolder;
+    margin: 3rem auto 3rem auto;
+    color: white;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: all 0.3s linear
+}
+
+button:hover {
+    background-color: rgb(38, 37, 37, 0.7);
+}
+
+footer {
+    position: relative;
+    background-color: rgb(37, 36, 36);
+    padding: 2.5rem 0;
+    border-top: rgb(248, 240, 240) 2px solid;
+    bottom: 0;
+    width: 100%
+}
+
+footer p {
+    color: rgb(248, 240, 240);
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bolder;
+}
