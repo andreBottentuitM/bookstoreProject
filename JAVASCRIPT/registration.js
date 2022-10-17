@@ -129,13 +129,14 @@ const confirmRegistration = async (e) => {
 
     
         if(errorsValidation && inputsValidation){
-
             resultForm.innerHTML = 'Cadastro realizado com sucesso!'
             resultForm.style.color = 'green'
+            resultForm.style.background = 'rgb(209, 247, 209)'
             console.log('Sucesso!')
         }else{
-            resultForm.innerHTML = 'Cadastro realizado sem sucesso! Verifique se algo foi preenchido inadequadamente.'
+           resultForm.innerHTML = 'Cadastro realizado sem sucesso! Verifique se algo foi preenchido inadequadamente.'
             resultForm.style.color = 'red'
+            resultForm.style.background = 'rgb(245, 194, 194)'
             console.log('Sem sucesso!')
         }
         

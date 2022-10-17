@@ -3,9 +3,9 @@
 const closeButton = document.querySelector('.closed')
 const transparency = document.querySelector('.transparent')
 closeButton.addEventListener('click', closePromotion)
+transparency.addEventListener('click', closePromotion)
 
-
-function closePromotion(e) {
+function closePromotion() {
   closeButton.style.display = 'none'
   transparency.style.display = 'none'
   document.querySelector('.container-one').style.display = 'none'
@@ -284,7 +284,7 @@ const allBooksInCart = document.querySelector('.container-all-sections')
 
 
 let totalInputs = []
-let totalValueBooks = 0
+
 const sectionsContainer = document.querySelector('.container-all-sections')
 
 function inputBookCart(e) {
@@ -292,29 +292,60 @@ function inputBookCart(e) {
   let checkingEverySections = totalInputs.every(item => {
     return parseInt(id) != item
   })
-
+   
   if (checkingEverySections) {
+    
 
     let element = document.createElement('section')
+
     element.classList.add('style-books-cart')
+    
+    const optionsUnits = [1,2,3,4,5,6,7,8,9,10]
+    let units = ''
+    optionsUnits.forEach(item => {
+      units += `<option value="${item}">${item}</option>`
+    })
 
     element.innerHTML = `
   <img src="${booksList[id].img}" alt="${booksList[id].name}">
   <div class="flex-center-content-books-cart">
   <span class="name">${booksList[id].name}</span>
   <span class="priceCart">R$ ${booksList[id].price.toFixed(2)}</span>
-  <label for="quantidade">Quantidade: <input key="${id}" type="number" min="1" max="10" value="1"><i class="fa-solid fa-trash-can delete"></i></label>
+  <label for="quantidade">Quantidade: <select key=${id}>
+    ${units}
+  </select> <i class="fa-solid fa-trash-can delete"></i></label>
 </div>`
 
-    const deleteButton = element.querySelector('.delete')
-    deleteButton.addEventListener('click', deleteItem)
-    sectionsContainer.appendChild(element)
+const deleteButton = element.querySelector('.delete')
+deleteButton.addEventListener('click', deleteItem)
+sectionsContainer.appendChild(element)
 
-    totalInputs.push(id)
-    totalShopCart.innerHTML = totalInputs.length
-    totalShopCartResponsive.innerHTML = totalInputs.length
-  }
+totalInputs.push(id)
+totalShopCart.innerHTML = totalInputs.length
+totalShopCartResponsive.innerHTML = totalInputs.length
+
+gettingTotalValue()
+const allSelects = document.querySelectorAll('select')
+allSelects.forEach(item => item.addEventListener('click', gettingTotalValue))
 }
+}
+
+
+const totalBooks = document.querySelector('.totalValue span')
+
+function gettingTotalValue () {
+  const allSelects = document.querySelectorAll('select')
+  let valueTotalBooks = 0
+  allSelects.forEach(item => {
+    let idBook = item.getAttribute('key')
+    let units = item.options[item.selectedIndex].value
+    let price = booksList[idBook].price
+
+    valueTotalBooks += units * price
+  })
+  totalBooks.innerHTML = ` R$${valueTotalBooks.toFixed(2)}`
+}
+
 
 const deleteItem = (e) => {
   const itemDelete = e.currentTarget.parentElement.parentElement.parentElement
@@ -325,30 +356,7 @@ const deleteItem = (e) => {
   sectionsContainer.removeChild(itemDelete)
   totalShopCart.innerHTML = totalInputs.length
   totalShopCartResponsive.innerHTML = totalInputs.length
+  gettingTotalValue()
 }
-
-/*--------------------------------TOTAL VALUE-----------------------------------*/
-const totalBooks = document.querySelector('.totalBooks')
-
-setInterval(() => {
-  const allInputs = document.querySelectorAll('[key]')
-  let total = 0
-  allInputs.forEach((item) => {
-    let id = item.getAttribute('key')
-    let units = item.value
-
-    if (units > 10) {
-      item.value = 10
-    }
-    if (units < 1) {
-      item.value = 1
-    }
-
-    total += booksList[id].price * units
-
-  })
-  totalBooks.innerHTML = ` R$${total.toFixed(2)}`
-}, 300)
-
 
 

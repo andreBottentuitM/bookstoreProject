@@ -3,6 +3,7 @@
 
 html {
     font-size: 62.5%;
+    width: 100%;
 }
 
 body {
@@ -32,10 +33,19 @@ section h1 {
     margin: 2.7rem 0 2rem;
 }
 
+.container-registration {
+    margin: 5rem auto;
+    background-color: rgb(214, 209, 209);
+    border: 1px solid black;
+    width: 55rem;
+
+}
+
 .container-registration input {
+    position: relative;
     padding: 1.3rem 0;
     outline: none;
-    width: 20rem;
+    max-width: 40.4rem;
     font-size: 1.5rem;
     border: 2px solid rgba(28, 28, 28, 0.5);
     border-radius: 3px;
@@ -62,6 +72,10 @@ section h1 {
     justify-content: center;
 }
 
+#data{
+    width:18.3rem
+}
+
 .nome {
     grid-area: nome;
 }
@@ -80,7 +94,7 @@ section h1 {
 
 .email {
     grid-area: email;
-    margin: 0 auto
+  
 }
 
 .password {
@@ -93,7 +107,7 @@ section h1 {
 
 .cep {
     grid-area: cep;
-    margin: 0 auto
+  
 }
 
 .rua {
@@ -121,29 +135,22 @@ section h1 {
 }
 
 #email {
-    width: 43rem
+    width: 200rem
 }
 
 #cep {
-    width: 43rem
+    width: 45rem
 }
 
-.container-registration {
-    margin: 5rem auto;
-    background-color: rgb(214, 209, 209);
-    border: 1px solid black;
-    width: 50rem;
-
-}
 
 button {
     display: block;
-    width: 43.4rem;
+    width: 41rem;
     background-color: rgb(38, 37, 37);
     padding: 1.5rem 0;
     font-size: 2rem;
     font-weight: bolder;
-    margin: 3rem auto 3rem auto;
+    margin: 3rem auto 3rem 6.7rem;
     color: white;
     border: none;
     border-radius: 2px;
@@ -176,6 +183,8 @@ p{
     font-size: 1.1rem;
     color:red;
     font-weight: 700;
+    text-align: left;
+    width:20rem
 }
 
 .validation:disabled{
@@ -186,4 +195,60 @@ p{
     text-align: center;
     font-size: 1.5rem;
     font-weight: bolder;
+    padding:2rem 0;
+    margin-bottom: 3rem;
+    color:rgb(209, 247, 209)
+}
+
+@media screen and (max-width:570px){
+    .container-inputs {
+        display: grid;
+        grid-template-areas:
+            'nome nome'
+            'cpf cpf'
+            'data data'
+            'telefone telefone'
+            'email email'
+            'senha senha'
+            'confirmar confirmar'
+            'cep cep'
+            'rua rua'
+            'numero numero'
+            'complemento complemento'
+            'bairro bairro'
+            'cidade cidade'
+            'estado estado';
+        column-gap: 2rem;
+        row-gap: 1rem;
+        justify-content: center;
+    }
+
+    .container-registration{
+        width: 97vw;
+        padding-bottom: 5rem;
+    }
+
+    .container-registration input{
+        display: block;
+        max-width:70vw;
+        margin: 0 auto
+    }
+
+    #data{
+        width:100vw
+    }
+
+    input{
+        width:100%
+    }
+    
+    button{
+        margin: 3rem auto 3rem auto;
+        max-width:71.5vw
+    }
+    
+    p{
+        width:50vw
+    }
+    
 }

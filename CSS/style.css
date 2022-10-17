@@ -18,20 +18,6 @@ body {
     transition: all 0.3s linear
 }
 
-.closed {
-    position: relative;
-    top: -38rem;
-    left: 55rem;
-    font-size: 3rem;
-    background-color: black;
-    padding: 0.5rem 1.5rem;
-    border-radius: 50%;
-    border: rgb(217, 209, 209) solid 2px;
-    cursor: pointer;
-    width: 2rem;
-}
-
-
 /*---------------------------------------------------------------------*/
 /*----------------------------START COUNTDOWN--------------------------*/
 /*---------------------------------------------------------------------*/
@@ -39,7 +25,7 @@ body {
 
 /*CLOSED BUTTON*/
 .closed {
-    top: -31rem;
+    top: -33rem;
     left: 41rem;
     font-size: 2.5rem;
     background-color: black;
@@ -49,14 +35,15 @@ body {
     cursor: pointer;
     width: 2rem;
     text-align: center;
+    position: relative;
 }
 
 /* CONTENT */
 .container-one {
     display: flex;
     align-items: center;
-    top: 20%;
-    height: 29rem;
+    top:20%;
+    height: 31rem;
     width: 55rem;
     gap: 3rem;
     border: 3px solid rgb(217, 209, 209);
@@ -64,7 +51,7 @@ body {
     background-color: rgb(37, 36, 36);
     border-radius: 4px;
     z-index: 10;
-    position: fixed;
+    position: absolute;
 }
 
 .center-promotion {
@@ -109,7 +96,7 @@ body {
 }
 
 .text {
-    font-size: 1.2rem
+    font-size: 1.35rem
 }
 
 .text span {
@@ -163,10 +150,10 @@ body {
 /*------------------------------------------------------------------*/
 
 .nav-header {
-    position: fixed;
+    position: absolute;
     color: black;
     margin-top: -1rem;
-    width: 100vw;
+    width: 100%;
     background-color: rgb(37, 36, 36);
     color: white;
     border-bottom: 3px solid rgb(37, 36, 36);
@@ -319,8 +306,12 @@ body {
 /*----------------------------START MAIN----------------------------*/
 /*------------------------------------------------------------------*/
 
+main{
+    min-height: 200rem
+}
+
 .flex-container-books {
-    margin: 17rem auto 0rem;
+    margin: 17rem auto 5rem;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
     align-items: center;
@@ -475,10 +466,6 @@ body {
     width: 4rem
 }
 
-.container-all-sections:last-child {
-background-color:red
-}
-
 
 .style-books-cart{
     display: flex;
@@ -512,13 +499,43 @@ background-color:red
 
 .totalValue{
     display: flex;
-    justify-content: flex-start;
+    margin-top:3rem;
+    justify-content: space-between;
+    align-items: baseline;
+    background-color: rgb(101, 101, 97);
+    padding: 2rem 0;
+    
+    color:rgb(238, 228, 228)
+}
+.totalValue div{
+   margin-left:10px
 }
 
-.totalBooks {
-    font-size: 2rem;
-    color: white
+.totalValue span{
+    font-size: 2.2rem;
+    margin-right:10px
 }
+
+.button-purchase{
+    display: block;
+    font-size: 1.5rem;
+    margin: 20px auto;
+    padding: 1.5rem 2rem;
+    border-radius: .3rem;
+    border: none;
+    font-weight: bolder;
+    background-color: rgb(238, 228, 228);
+    color:rgb(81, 81, 78);
+    cursor: pointer;
+    transition: all 0.3s linear;
+    border: black solid 2px;
+}
+
+.button-purchase:hover{
+    color:black;
+    background-color: white;
+}
+
 
 /*------------------------------------------------------------------*/
 /*-------------------------------FOOTER-----------------------------*/
@@ -556,15 +573,18 @@ footer p {
 @media screen and (max-width:1000px) {
     html {
         font-size: 55%
-    }
-
-
-   
+    }   
 }
+
+
 
 @media screen and (max-width:750px) {
     html {
         font-size: 70%
+    }
+
+    body{
+        overflow: scroll;
     }
 
     .cartAmount {
@@ -608,24 +628,15 @@ footer p {
     }
 
     .closed {
-        position: relative;
-        top: -29rem;
-        left: 20rem;
-        font-size: 1.5rem;
-        background-color: black;
-        padding: 0.5rem 0.5rem;
-        border-radius: 50%;
-        border: rgb(217, 209, 209) solid 2px;
-        cursor: pointer;
-
+        display:none
     }
 
     .container-one {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 18rem;
-        height: 25.5rem;
+        display:none
+    }
+
+    .transparent{
+        display: none;
     }
 
     .container-two {
