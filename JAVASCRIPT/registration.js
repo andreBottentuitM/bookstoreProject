@@ -54,7 +54,8 @@ const getAddress = async (cep) => {
 
     const data = await response.json()
 
-    if (data.erro === 'true') {
+
+    if (data.erro) {
         addressInput.value = ''
         cityInput.value = ''
         neighborhoodInput.value = ''
@@ -99,7 +100,6 @@ inputs.forEach(input => input.addEventListener('keyup', verificationInput))
 
     function verificationInput(e) {
         errors.forEach((item) => {
-            console.log(item)
             if (e.target.id == item.input) {
                 item.function(e.target.value)
             }
