@@ -841,9 +841,9 @@ footer p {
     }
 }
 
-@media screen and (max-width:300px) {
+@media screen and (max-width:350px) {
     html {
-        font-size: 60%
+        font-size: 50%
     }
 
 }

@@ -38,12 +38,11 @@ document.querySelectorAll('input').forEach(input => {
 
 cepInput.addEventListener("keyup", (e) => {
     const inputValue = e.target.value.replace('-', '')
-        if (inputValue.length === 8) {
-            getAddress(inputValue)
-           
-        }
+    if (inputValue.length === 8) {
+        getAddress(inputValue)
+
     }
-)
+})
 
 const getAddress = async (cep) => {
     cepInput.blur()
@@ -67,7 +66,7 @@ const getAddress = async (cep) => {
             cepInput.value = ''
             takeOffDisabled('wrong')
         }, 2500)
-    
+
     } else {
         document.querySelector('[cepText]').innerHTML = 'Carregando...'
         setTimeout(() => {
@@ -79,13 +78,13 @@ const getAddress = async (cep) => {
             takeOffDisabled('correct')
         }, 1000)
     }
-   return data
+    return data
 }
 
 function takeOffDisabled(item) {
     const inputsWithDisabled = document.querySelectorAll('.validation')
     inputsWithDisabled.forEach(input => {
-       
+
         if (cepInput.value != '' && item == 'correct') {
             input.removeAttribute('disabled')
         } else if (item == 'wrong') {
@@ -94,52 +93,55 @@ function takeOffDisabled(item) {
     })
 }
 
-const inputs = document.querySelectorAll('input')
-inputs.forEach(input => input.addEventListener('keypress', verificationInput))
-inputs.forEach(input => input.addEventListener('keyup', verificationInput))
+const inputs = document.querySelectorAll('.validationForm')
+inputs.forEach(input => input.addEventListener('blur', verificationInput))
 
-    function verificationInput(e) {
-        errors.forEach((item) => {
-            if (e.target.id == item.input) {
-                item.function(e.target.value)
-            }
-        })
-    }
+function verificationInput(e) {
+    errors.forEach((item) => {
+        if (e.target.id == item.input) {
+            item.function(e.target.value)
+        }
+    })
+}
 
 const confirmRegistration = async (e) => {
     e.preventDefault()
 
-    /*try{const apiUrl = `https://viacep.com.br/ws/${cepInput.value}/json/`
+    errors.forEach((item, i) => {
+        item.function(inputs[i].value)
+    })
 
-    const response = await fetch(apiUrl)
-
-    const data = await response.json()}
-    catch(error){console.log(error)}*/
+    const resultForm = document.querySelector('.resultForm')
     const allErrors = document.querySelectorAll('p')
     const allErrorsToArray = Array.prototype.slice.call(allErrors)
     const allInputsToArray = Array.prototype.slice.call(inputs)
-    const resultForm = document.querySelector('.resultForm')
+
     let errorsValidation = allErrorsToArray.every(item => {
-       return item.innerHTML == ''
+        return item.innerHTML == ''
     })
- 
+
     let inputsValidation = allInputsToArray.every(item => {
         return item.value != ''
     })
 
-    
-        if(errorsValidation && inputsValidation){
-            resultForm.innerHTML = 'Cadastro realizado com sucesso!'
-            resultForm.style.color = 'green'
-            resultForm.style.background = 'rgb(209, 247, 209)'
-            console.log('Sucesso!')
-        }else{
-           resultForm.innerHTML = 'Cadastro realizado sem sucesso! Verifique se algo foi preenchido inadequadamente.'
-            resultForm.style.color = 'red'
-            resultForm.style.background = 'rgb(245, 194, 194)'
-            console.log('Sem sucesso!')
-        }
-        
+    const apiUrl = `https://viacep.com.br/ws/${cepInput.value}/json/`
+
+    const response = await fetch(apiUrl)
+
+    const data = await response.json()
+
+    if (errorsValidation && inputsValidation && !data.erro) {
+        resultForm.innerHTML = 'Cadastro realizado com sucesso!'
+        resultForm.classList.remove('error')
+        resultForm.classList.add('positive')
+    } else {
+        resultForm.innerHTML = 'Cadastro realizado sem sucesso! Verifique se algo foi preenchido inadequadamente.'
+        resultForm.classList.remove('positive')
+        resultForm.classList.add('error')
+    }
+
+
 }
+
 
 buttonSign.addEventListener('click', confirmRegistration)
