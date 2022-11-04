@@ -19,18 +19,19 @@
             <form action="">
                 <div class="email">
                     <label id="login-label" for="email"><input type="email" name="email" placeholder="Insira seu email"
-                            required aria-label="Insira seu email">
+                            required email aria-label="Insira seu email">
                     </label>
                 </div>
                 <div>
-                    <label id="senha-label" for="senha"><input type="password" name="senha"
-                            placeholder="Insira sua senha" required aria-label="Insira sua senha"></label>
+                    <label id="senha-label" for="password"><input type="password" name="password"
+                            placeholder="Insira sua senha" required aria-label="Insira sua senha" password></label>
                 </div>
                 <div>
                     <button type="submit" id="submit">
                         Entrar
                     </button>
             </form>
+            <p id="resultLogin"></p>
             <div class="create-login">
                 <p>Não possui login? <a href="./registration.html">Cadastra-se</a></p>
             </div>
@@ -40,6 +41,7 @@
     <footer>
         <p>Produced by André Bottentuit</p>
     </footer>
+    <script src="./JAVASCRIPT/login.js"></script>
 </body>
 
 </html>

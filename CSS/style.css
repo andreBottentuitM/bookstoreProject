@@ -1,5 +1,11 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto:400,700&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+:root {
+    --color-yellow: #fdd900;
+    --color-lightYellow: rgba(241,237,175,1);
+    --color-black: black
+}
 
 html {
     font-size: 62.5%;
@@ -9,15 +15,36 @@ body {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    color: rgb(217, 209, 209);
-    font-family: "Roboto", sans-serif;
+    font-family: "Raleway", sans-serif;
     width: 100%;
-    background-color: rgb(37, 36, 36, 0.1);
     z-index: 1;
     overflow: hidden;
-    transition: all 0.3s linear
+    transition: all 0.3s linear;
 }
 
+.addOverflow{
+    overflow-y: scroll;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: white;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-lightYellow);
+  }
+
+  
+  
+  /* Handle on hover */
+ 
 /*---------------------------------------------------------------------*/
 /*----------------------------START COUNTDOWN--------------------------*/
 /*---------------------------------------------------------------------*/
@@ -25,13 +52,14 @@ body {
 
 /*CLOSED BUTTON*/
 .closed {
+    color:white;
     top: -33rem;
     left: 41rem;
     font-size: 2.5rem;
     background-color: black;
     padding: 0.5rem 1rem;
     border-radius: 50%;
-    border: rgb(217, 209, 209) solid 2px;
+    border: var(--color-black) solid 2px;
     cursor: pointer;
     width: 2rem;
     text-align: center;
@@ -46,9 +74,10 @@ body {
     height: 31rem;
     width: 55rem;
     gap: 3rem;
-    border: 3px solid rgb(217, 209, 209);
+    border: 3px solid var(--color-black);
     padding: 1rem 2rem;
-    background-color: rgb(37, 36, 36);
+    background-color: var(--color-yellow);
+    color:black;
     border-radius: 4px;
     z-index: 10;
     position: absolute;
@@ -84,15 +113,15 @@ body {
 
 .container-two h1 {
     font-size: 1.8rem;
-    font-weight: border;
-    color: white;
+    font-weight: bolder;
+    color: var(--color-black);
 
 }
 
 .container-two h2 {
     font-size: 1.4rem;
-    font-weight: border;
-    color: white;
+    font-weight: bolder;
+    color: var(--color-black);
 }
 
 .text {
@@ -101,7 +130,7 @@ body {
 
 .text span {
     font-weight: bolder;
-    color: white
+    color: var(--color-black)
 }
 
 .price {
@@ -109,7 +138,7 @@ body {
     font-size: 2rem;
     text-align: center;
     font-weight: bolder;
-    color: white
+    color: var(--color-black)
 }
 
 /*COUNTDOWN*/
@@ -154,10 +183,10 @@ body {
     color: black;
     margin-top: -1rem;
     width: 100%;
-    background-color: rgb(37, 36, 36);
+    background-color: var(--color-yellow);
     color: white;
-    border-bottom: 3px solid rgb(37, 36, 36);
-    transition: all 0.3s linear
+    transition: all 0.3s linear;
+    box-shadow: 5px 5px 5px rgb(186, 184, 184)
 }
 
 .logo {
@@ -171,6 +200,7 @@ body {
     justify-content: space-between;
     padding: 3rem 0;
     position: relative;
+    
 }
 
 .link-flex {
@@ -183,13 +213,13 @@ body {
 }
 
 .link-flex a {
-    color: rgb(217, 209, 209);
+    color: black;
     font-size: 2.2rem;
     transition: all 0.3s linear
 }
 
 .link-flex a:hover {
-    color: white;
+    color: rgb(92, 84, 84);
 }
 
 .login {
@@ -197,8 +227,8 @@ body {
 }
 
 .button {
-    background-color: rgb(37, 36, 36);
-    color: rgb(217, 209, 209);
+    background-color: var(--color-yellow);
+    color: black;
     border: none;
     font-size: 2.2rem;
     display: none;
@@ -209,17 +239,15 @@ body {
     padding: .6rem 0;
     border-radius: 4px;
     max-width:30rem;
-    background-color: rgb(217, 209, 209);
-   
+    background-color: white;
 }
 
 .flex-search {
     display: flex;
-
     align-items: center;
     font-size: 2.5rem;
     gap: .7rem;
-    color: rgb(217, 209, 209);
+    color: black;
     top:.1rem;
     margin-bottom:0.5rem;
 }
@@ -229,11 +257,10 @@ body {
     align-items: center;
     width: 100%;
     margin-top: -1.5rem;
-    background-color: rgb(217, 209, 209);
+    background-color: var(--color-lightYellow);
     color: rgb(37, 36, 36);
     justify-content: center;
     height: 5rem;
-
 }
 
 .flex-navbar-two p {
@@ -284,18 +311,18 @@ body {
 }
 
 #numberCart {
+    font-family: "roboto", sans-serif;
     position: relative;
     bottom:2rem;
     font-size: 1.2rem;
-    background-color: rgb(217, 209, 209);
-    color: rgb(62, 60, 60);
+    background-color: black;
+    color: white;
     display: flex;
     justify-content: center;
     border-radius: 50%;
     font-weight: bolder;
     padding: 4px 4px;
     width:1.5rem;
-    border: rgb(76, 75, 75) solid 1px;
 }
 
 #numberCartResponsive{
@@ -327,7 +354,13 @@ main{
     height: 45rem;
     align-items: center;
     text-align: start;
-    border: rgb(76, 75, 75, 0.1) solid 1px;
+    box-shadow: 3px 3px 3px rgb(234, 231, 231);
+    border-radius: 4px;
+    transition: all 0.3s linear;
+}
+
+.flex-book:hover{
+    box-shadow: 8px 8px 8px rgb(234, 231, 231);
 }
 
 .flex-content-promotion-book {
@@ -419,12 +452,14 @@ main{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height:8rem
-
+    height:8rem;
+    background-color:var(--color-yellow);
+    color:black;
+    box-shadow: 4px 4px 4px rgb(186, 184, 184)
 }
 
 .bookIcon{
-    color:white;
+    color:black;
     font-size: 3rem;
     margin-left:1rem;
 }
@@ -438,24 +473,29 @@ main{
 .flex-cart-closed h1{
    font-weight: bold;
    width: 12rem;
-   color: white
+   color: black
 }
 
 .container-books-cart {
     position: fixed;
     top: 0;
     right: 0;
-    background-color: rgb(76, 75, 75);
+    background-color: white;
     color: rgb(248, 240, 240);
+    width:0;
     height: 100%;
-    width: 0;
     font-size: 1.4rem;
-    font-weight: bolder;
     overflow-y: scroll;
+    font-weight: bolder;
     transition: all 0.3s linear;
-    border-left: rgb(243, 237, 237) 4px solid;
+    box-shadow: 10px 10px 10px 10px rgb(186, 184, 184)
     
 }
+
+.container-books-cart::-webkit-scrollbar {
+    width: 0px;
+  }
+
 
 .container-books-cart input {
     width: 3rem;
@@ -463,7 +503,8 @@ main{
 }
 
 .container-books-cart img {
-    width: 4rem
+    width: 4rem;
+    box-shadow: 2px 2px 2px rgb(206, 203, 203)
 }
 
 
@@ -471,12 +512,12 @@ main{
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    border-bottom: 1px solid white;
+    border-bottom: 1px solid rgb(211, 209, 209);
     padding: 1rem 0;
-    width: 100%;
-    color: white;
+    width: 98%;
+    color: black;
     gap:1rem;
-    background-color: rgb(97, 94, 94);
+    margin-left:5px
 }
 
 .flex-center-content-books-cart {
@@ -502,10 +543,10 @@ main{
     margin-top:3rem;
     justify-content: space-between;
     align-items: baseline;
-    background-color: rgb(101, 101, 97);
+    background-color: white;
     padding: 2rem 0;
-    
-    color:rgb(238, 228, 228)
+    color:black;
+    box-shadow: 3px -2px 2px rgb(227, 224, 224);
 }
 .totalValue div{
    margin-left:10px
@@ -524,16 +565,17 @@ main{
     border-radius: .3rem;
     border: none;
     font-weight: bolder;
-    background-color: rgb(238, 228, 228);
-    color:rgb(81, 81, 78);
+    background-color: var(--color-yellow);
+    color:black;
     cursor: pointer;
     transition: all 0.3s linear;
-    border: black solid 2px;
+    border:  white 2px solid;
 }
 
 .button-purchase:hover{
     color:black;
     background-color: white;
+    border: var(--color-yellow) 2px solid;
 }
 
 
@@ -543,18 +585,19 @@ main{
 
 footer {
    position: relative;
-   background-color: rgb(37, 36, 36);
+   background-color: var(--color-yellow);
+   color:black;
    padding: 2.5rem 0;
-   border-top:rgb(248, 240, 240) 2px solid;
    bottom:0;
-   width: 100%
+   width: 100%;
+   box-shadow: 2px -4px 15px rgb(198, 195, 195);
 }
 
 footer p {
-   color: rgb(248, 240, 240);
    text-align: center;
    font-size: 2rem;
    font-weight: bolder;
+   
 }
 
 
@@ -603,15 +646,15 @@ footer p {
         display: flex;
         position: relative;
         font-size: 1.2rem;
-        background-color: rgb(217, 209, 209);
-        color: rgb(62, 60, 60);
+        background-color: black;
+        color: white;
         border-radius: 50%;
         font-weight: bolder;
         justify-content: center;
         width: 2rem;
         bottom:1.2rem;
         padding:0.3rem 0;
-        border: rgb(76, 75, 75) solid 1px;
+        font-family: 'Roboto',sans-serif;
     }
 
     #numberCart {
@@ -700,7 +743,7 @@ footer p {
     .lupa {
         width: 90vw;
         padding: 0.5rem 0;
-        background-color: rgb(217, 209, 209);
+        background-color: white;
         border-radius: 4px;
         justify-content: center;
     }
@@ -792,7 +835,7 @@ footer p {
         width: 95vw;
         height: 15.5rem;
         gap: 1rem;
-        border: rgb(76, 75, 75, 0.1) 1px solid
+       
     }
 
     .flex-content-book {
@@ -805,7 +848,7 @@ footer p {
         width: 5rem;
         height: 8rem;
         background-color: rgb(250, 249, 248);
-        padding: 0 1.5rem
+        padding: 0 1.5rem;
     }
 
     .flex-book p:nth-child(2) {
@@ -823,8 +866,7 @@ footer p {
     }
 
     #book-promotion {
-        border: 1px solid black;
-        width: 94vw;
+        width: 95vw;
     }
 
     #book-promotion p:nth-child(2) {

@@ -10,7 +10,7 @@ function closePromotion() {
   transparency.style.display = 'none'
   document.querySelector('.container-one').style.display = 'none'
   document.querySelector('[page]').style.background = 'white'
-  document.querySelector('body').style.overflow = 'scroll'
+  document.querySelector('body').classList.add('addOverflow')
 }
 
 

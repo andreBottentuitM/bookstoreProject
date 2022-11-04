@@ -57,7 +57,7 @@ const errors = [{
         function: (text) => {
             const confirm = document.querySelector('#confirm')
             if (text.length < 6) {
-                document.querySelector('[passwordText]').innerHTML = 'Sua senha tem que ter no mínimo 6 dígitos'
+                document.querySelector('[passwordText]').innerHTML = 'Sua senha tem que ter no mínimo 6 dígitos.'
             } else {
                 document.querySelector('[passwordText]').innerHTML = ''
             }
