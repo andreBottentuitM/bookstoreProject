@@ -131,7 +131,7 @@ const confirmRegistration = async (e) => {
     })
       console.log(cpfValidation)
     let emailValidation = users.some((item)=> {
-       return item.cpf === emailValue.value 
+       return item.email === emailValue.value 
     })
 
 

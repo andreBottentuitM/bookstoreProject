@@ -9,7 +9,7 @@ function closePromotion() {
   closeButton.style.display = 'none'
   transparency.style.display = 'none'
   document.querySelector('.container-one').style.display = 'none'
-  document.querySelector('[page]').style.background = 'white'
+  document.querySelector('[page]').style.background = 'rgb(250, 243, 243)'
   document.querySelector('body').classList.add('addOverflow')
 }
 

@@ -7,39 +7,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Decow's Bookstore</title>
     <link rel="stylesheet" href="./CSS/style-login.css">
+    <script src="https://kit.fontawesome.com/ae234362c5.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
     <header>
         <img src="./IMAGES/logo.png" alt="Decow's Bookstore">
+        <a href="./index.html">Voltar</a>
     </header>
     <main>
-        <section class="login">
-            <h1>FAZER LOGIN</h1>
+        <section class="login-box">
+            <h2>Login</h2>
             <form action="">
-                <div class="email">
-                    <label id="login-label" for="email"><input type="email" name="email" placeholder="Insira seu email"
-                            required email aria-label="Insira seu email">
-                    </label>
+                <div class="user-box">
+                    <i class="fa-solid fa-envelope icon-login"></i>
+                    <input type="text" name="" required="" placeholder=" ">
+                    <label >Insira seu email</label>
                 </div>
-                <div>
-                    <label id="senha-label" for="password"><input type="password" name="password"
-                            placeholder="Insira sua senha" required aria-label="Insira sua senha" password></label>
+                    <div class="user-box">
+                    <i class="fa-solid fa-lock icon-password"></i>
+                    <input type="password" name="" required="" placeholder=" ">
+                    <label> Insira sua senha</label>
                 </div>
-                <div>
-                    <button type="submit" id="submit">
-                        Entrar
-                    </button>
+                <div class="button-form">
+                    <a href="#" id="submit">Entrar</a>
+                    <div id="register">Não possui login?
+                        <a href="./registration.html">Cadastra-se</a>
+                    </div>
+                </div>
             </form>
-            <p id="resultLogin"></p>
-            <div class="create-login">
-                <p>Não possui login? <a href="./registration.html">Cadastra-se</a></p>
-            </div>
-            </div>
         </section>
     </main>
     <footer>
-        <p>Produced by André Bottentuit</p>
+       <p>Produced by André Bottentuit</p>
     </footer>
     <script src="./JAVASCRIPT/login.js"></script>
 </body>

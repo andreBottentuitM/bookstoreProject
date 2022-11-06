@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto:400,700&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+
 :root {
     --color-yellow: #fdd900;
     --color-lightYellow: rgba(241,237,175,1);
@@ -9,6 +10,7 @@
 
 html {
     font-size: 62.5%;
+  
 }
 
 body {
@@ -20,6 +22,7 @@ body {
     z-index: 1;
     overflow: hidden;
     transition: all 0.3s linear;
+    
 }
 
 .addOverflow{
@@ -191,14 +194,14 @@ body {
 
 .logo {
     padding-left: 5rem;
-    width: 10rem
+    width: 8rem
 }
 
 .header-center {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 3rem 0;
+    padding: 2rem 0;
     position: relative;
     
 }
@@ -272,9 +275,24 @@ body {
     display: flex;
     list-style-type: none;
     gap: 5rem;
+    background-color: var(--color-lightYellow);
     font-size: 2rem;
     cursor: pointer;
 }
+
+.flex-literatura li:after{
+    display: block;
+    padding-bottom: 2px;
+    content: '';
+    border-bottom: solid 2px rgb(139, 135, 135);
+    transform: scaleX(0);
+    transition: transform 300ms ease-in-out;
+}
+
+.flex-literatura li:hover:after {
+    transform: scaleX(1)
+}
+
 
 .flex-literatura a {
     text-decoration: none;
@@ -334,7 +352,7 @@ body {
 /*------------------------------------------------------------------*/
 
 main{
-    min-height: 200rem
+    min-height: 200rem;
 }
 
 .flex-container-books {
@@ -356,6 +374,7 @@ main{
     text-align: start;
     box-shadow: 3px 3px 3px rgb(234, 231, 231);
     border-radius: 4px;
+    background-color: white;
     transition: all 0.3s linear;
 }
 
@@ -411,18 +430,18 @@ main{
 .flex-book button {
     width: 15rem;
     height: 3rem;
-    border: none;
+    border: 2px solid var(--color-yellow);
     border-radius: 10px;
     cursor: pointer;
     font-weight: bolder;
-    background-color: rgb(76, 75, 75);
-    color: white;
+    background-color: var(--color-yellow);
+    color: rgb(58, 58, 58);
     transition: all 0.3s linear;
     font-size: 1.3rem
 }
 
 .flex-book button:hover{
-    background-color: rgb(121, 115, 115);
+    background-color: white;
 }
 
 
@@ -621,7 +640,7 @@ footer p {
 
 
 
-@media screen and (max-width:750px) {
+@media screen and (max-width:800px) {
     html {
         font-size: 70%
     }
@@ -731,13 +750,13 @@ footer p {
         gap: 1px;
         width:80%;
         margin:0 auto;
-        margin-top: 3rem;
+     
       
     }
 
     .fa-magnifying-glass {
         margin-left: 0.5rem;
-        color: rgb(217, 209, 209);
+        color: black;
     }
 
     .lupa {
@@ -749,7 +768,7 @@ footer p {
     }
 
     .logo {
-        margin-top: -1rem;
+      
         width: 7rem;
         margin-left: -5rem;
 
@@ -763,8 +782,6 @@ footer p {
         
     }
 
-
-
     .expand {
         background-color: rgb(56, 55, 55);
         height: 14rem;
@@ -774,29 +791,38 @@ footer p {
         display: flex;
         flex-direction: column;
         gap: 1.2rem;
-        width:100%
+        width:100%;
+        color: #4c4b4b;
+        
+    }
+    .flex-literatura li{
+        cursor: pointer;
     }
     
+    .flex-literatura li:after{
+        border: none
+    }
 
     .flex-literatura a {
         font-weight: bolder;
         font-size: 1.7rem;
         width:100%;
-        color:rgb(215, 201, 201)
+        border:none;
+        
+      
     }
 
     .flex-literatura a:hover {
-        color:rgb(255, 255, 255);
+        color:black;
         font-weight: bolder;
     }
 
     .header-center {
         display: flex;
         margin:0 auto;
-        width: 81%;
-        padding-bottom: 1rem;
+        width: 81vw;
         align-items: center;
-        height: 4rem;
+        
     }
 
     .button {

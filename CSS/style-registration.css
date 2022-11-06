@@ -1,5 +1,11 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto:400,700&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+
+:root{
+    --color-yellow: #fdd900;
+    --color-lightYellow: rgba(241,237,175,1);
+}
 
 html {
     font-size: 62.5%;
@@ -13,21 +19,22 @@ body {
     margin: 0;
     box-sizing: border-box;
     color: rgb(37, 36, 36);
-    font-family: "Roboto", sans-serif;
+    font-family: "Raleway", sans-serif;
     width: 100%;
     height:100%;
-    background-color: rgb(252, 245, 245);
+    background-color: rgb(250, 243, 243);
 }
 
 header {
-    background-color: rgb(37, 36, 36);
+    background-color: #fdd900;
+    box-shadow: 5px 5px 5px rgb(186, 184, 184);
     width: 100%;
-    padding: 1rem 0;
+    padding:1.6rem 0
 }
 
-img {
-    display: block;
-    margin: 0rem auto
+img{
+    width:8rem;
+    margin-left:20px
 }
 
 
@@ -39,11 +46,12 @@ section h1 {
 
 .container-registration {
     top:20vh;
-    margin: 10rem auto 20rem;
-    background-color: rgb(214, 209, 209);
-    border: 1px solid black;
+    margin: 5rem auto 20rem;
+    background-color: white;
     width: 55rem;
-    
+    border: 1px solid #d2d3d9;
+    box-shadow: 0 15px 25px rgba(241,237,175,.7);
+    border-radius: 10px
 }
 
 .container-registration input {
@@ -51,13 +59,14 @@ section h1 {
     outline: none;
     max-width: 40.4rem;
     font-size: 1.5rem;
-    border: 2px solid rgba(28, 28, 28, 0.5);
+    border:none;
+    border-bottom: 1px solid var(--color-yellow);
     border-radius: 3px;
     padding-left: .6rem;
 }
 
 .container-inputs input:focus {
-    border: 2px black solid
+    box-shadow: 0 4px 7px -2px rgba(241,237,175,.7)
 }
 
 .container-inputs {
@@ -150,31 +159,30 @@ section h1 {
 button {
     display: block;
     width: 41rem;
-    background-color: rgb(38, 37, 37);
+    background-color: white;
     padding: 1.5rem 0;
     font-size: 2rem;
-    font-weight: bolder;
     margin: 3rem auto 3rem 6.7rem;
-    color: white;
-    border: none;
+    color: #48494c;
+    border: 2px solid var(--color-yellow);
     border-radius: 2px;
     cursor: pointer;
     transition: all 0.3s linear
 }
 
 button:hover {
-    background-color: rgba(38, 37, 37, 0.7);
+    background-color: var(--color-yellow);
 }
 
 footer {
-    background-color: rgb(37, 36, 36);
+    background-color:var(--color-yellow);
     padding: 2.5rem 0;
     border-top: rgb(248, 240, 240) 2px solid;
     width: 100%;
 }
 
 footer div {
-    color: rgb(248, 240, 240);
+    color: black;
     text-align: center;
     font-size: 2rem;
     font-weight: bolder;
