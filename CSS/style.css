@@ -243,6 +243,8 @@ body {
     border-radius: 4px;
     max-width:30rem;
     background-color: white;
+    border: none;
+    outline: none;
 }
 
 .flex-search {
@@ -310,7 +312,6 @@ body {
     align-items: center;
     font-size: 2rem;
     gap: 4rem;
- 
 }
 
 .fa-magnifying-glass {
@@ -757,6 +758,7 @@ footer p {
     .fa-magnifying-glass {
         margin-left: 0.5rem;
         color: black;
+        margin-top: 1rem;
     }
 
     .lupa {
@@ -765,6 +767,9 @@ footer p {
         background-color: white;
         border-radius: 4px;
         justify-content: center;
+        border: none;
+        outline: none;
+        margin-top: 1rem;
     }
 
     .logo {
