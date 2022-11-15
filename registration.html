@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Decow's Bookstore</title>
     <link rel="stylesheet" href="./CSS/style-registration.css">
+    <link rel="stylesheet" href="./CSS/loading.css">
+    <script src="https://kit.fontawesome.com/ae234362c5.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <header>
@@ -56,6 +58,7 @@
                         <label for="cep"><input  data-js="cep" class="validationForm" type="text" maxlength="9" placeholder="CEP*" name="cep" id="cep"
                                 aria-label="CEP"></label>
                                 <p cepText></p>
+                                <div class="container-circles"></div>
                     </div>
                     <div class="rua">
                         <label for="rua"><input class="validation validationForm" type="text" placeholder="Rua*" name="rua" id="street"
@@ -85,13 +88,29 @@
                 <button type="submit" id="submit">
                     CADASTRAR
                 </button>
-                <div class="resultForm"></div>
             </form>
         </section>
     </main>
     <footer>
-        <div>Produced by André Bottentuit</div>
+        <div class="header-footer">
+        <img class="logo-footer" src="./IMAGES/logo.png" alt="">
+        <ul class="list-footer">
+            <li><i class="fa-brands fa-github"></i></li>
+            <li><i class="fa-brands fa-linkedin"></i></li>
+            <li><i class="fa-brands fa-instagram"></i></li>
+        </ul>
+    </div>
+    <div class="footer-information">
+        <div>CONTATO: 
+        <div class="footer-contact">andre.bottentuit@gmail.com</div>
+    </div>
+        <div>ENDEREÇO:
+        <div class="footer-contact">Recife - PE, BRASIL</div>
+    </div>
+    <div>Produced by André Bottentuit</div>
+    </div>
     </footer>
+    <script src="./JAVASCRIPT/sweetalert.js"></script>
     <script src="./JAVASCRIPT/wrong-registration.js"></script>
     <script src="./JAVASCRIPT/registration.js"></script>
 </body>

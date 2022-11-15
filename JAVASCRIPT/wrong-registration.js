@@ -61,11 +61,7 @@ const errors = [{
             } else {
                 document.querySelector('[passwordText]').innerHTML = ''
             }
-            if ((confirm.value != text.value && confirm.value.length != 0)) {
-                document.querySelector('[confirmText]').innerHTML = "A confirmação de senha não confere."
-            } else {
-                document.querySelector('[confirmText]').innerHTML = ''
-            }
+          
         }
     },
     {

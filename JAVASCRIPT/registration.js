@@ -55,28 +55,40 @@ const getAddress = async (cep) => {
 
 
     if (data.erro) {
-        addressInput.value = ''
-        cityInput.value = ''
-        neighborhoodInput.value = ''
-        regionInput.value = ''
-        document.querySelector('[cepText]').innerHTML = 'Carregando...'
-        setTimeout(() => document.querySelector('[cepText]').innerHTML = 'CEP incorreto', 1000)
+        document.querySelector('.container-circles').innerHTML = `
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        `
+        setTimeout(() => {
+            document.querySelector('.container-circles').innerHTML = ''
+            document.querySelector('[cepText]').innerHTML = 'CEP incorreto'
+        }, 3000)
         setTimeout(() => {
             document.querySelector('[cepText]').innerHTML = ''
             cepInput.value = ''
+            addressInput.value = ''
+        cityInput.value = ''
+        neighborhoodInput.value = ''
+        regionInput.value = ''
             takeOffDisabled('wrong')
-        }, 2500)
+        }, 4000)
 
     } else {
-        document.querySelector('[cepText]').innerHTML = 'Carregando...'
+        document.querySelector('.container-circles').innerHTML = `
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        `
         setTimeout(() => {
+            document.querySelector('.container-circles').innerHTML= ''
             addressInput.value = data.logradouro
             cityInput.value = data.localidade
             neighborhoodInput.value = data.bairro
             regionInput.value = data.uf
             document.querySelector('[cepText]').innerHTML = ''
             takeOffDisabled('correct')
-        }, 1000)
+        }, 3000)
     }
     return data
 }
@@ -107,12 +119,15 @@ function verificationInput(e) {
 let users = localStorage.getItem("users") ? JSON.parse(localStorage.getItem('users')) : []
 const confirmRegistration = async (e) => {
     e.preventDefault()
-
+    buttonSign.innerHTML ='<div class="loader"></div>'
+    
+    setTimeout(() => {
     errors.forEach((item, i) => {
         item.function(inputs[i].value)
     })
+    buttonSign.innerHTML = 'CADASTRAR'
+}, 1500)
   
-    const resultForm = document.querySelector('.resultForm')
     const allErrors = document.querySelectorAll('p')
     const allErrorsToArray = Array.prototype.slice.call(allErrors)
     const allInputsToArray = Array.prototype.slice.call(inputs)
@@ -129,7 +144,6 @@ const confirmRegistration = async (e) => {
     let cpfValidation = users.some((item)=> {
        return item.cpf === cpfValue.value 
     })
-      console.log(cpfValidation)
     let emailValidation = users.some((item)=> {
        return item.email === emailValue.value 
     })
@@ -142,13 +156,23 @@ const confirmRegistration = async (e) => {
     const data = await response.json()
 
     if (errorsValidation && inputsValidation && !data.erro && !cpfValidation && !emailValidation) {
-        resultForm.innerHTML = 'Cadastro realizado com sucesso!'
-        resultForm.classList.remove('error')
-        resultForm.classList.add('positive')
+        console.log('test')
         const id = new Date().getTime().toString()
         let users = {
             id: id  
         }
+        setTimeout(() => {
+        Swal.fire({
+            icon: 'success',
+            title: `Cadastro realizado com sucesso!`,
+            showConfirmButton: false,
+            footer:'<a href="./login.html">Efetuar login!</a>'
+          }
+          
+          )
+          buttonSign.innerHTML = 'CADASTRAR'
+        }, 1500)
+          
         document.querySelectorAll('input').forEach((input, index)=>{
            switch(input.name){
             case 'name':
@@ -193,18 +217,36 @@ const confirmRegistration = async (e) => {
         })
         addUsers(users)
     } else if(cpfValidation){
-        resultForm.innerHTML = 'CPF já cadastrado!'
-        resultForm.classList.remove('positive')
-        resultForm.classList.add('error')
+        setTimeout(() => {
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'CPF já cadastrado!',
+          })
+          buttonSign.innerHTML = 'CADASTRAR'
+        }, 1500)
+          
     } else if(emailValidation){
-        resultForm.innerHTML = 'Email já cadastrado!'
-        resultForm.classList.remove('positive')
-        resultForm.classList.add('error')
+        setTimeout(() => {
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Email já cadastrado!',
+          })
+          buttonSign.innerHTML = 'CADASTRAR'
+        }, 1500)
+          
     }
     else {
-        resultForm.innerHTML = 'Cadastro realizado sem sucesso! Verifique se algo foi preenchido inadequadamente.'
-        resultForm.classList.remove('positive')
-        resultForm.classList.add('error')
+        setTimeout(() => {
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Algo deu errado! Por favor, verique as informações preenchidas novamente!',
+          })
+          buttonSign.innerHTML = 'CADASTRAR'
+        }, 1500)
+          
     }
 }
 
@@ -214,3 +256,6 @@ let addUsers = (user) => {
     users.push(user)
     localStorage.setItem("users", JSON.stringify(users))
 }
+
+
+console.log(JSON.parse(localStorage.getItem('users')))

@@ -121,19 +121,27 @@ navToggle.addEventListener("click", function () {
 /*--------------------------------GETTING SEARCH-----------------------------------*/
 function GettingSearch(input, valueOfAttribute) {
   this.clickSearch = function () {
+    let totalNone = 0
     for (di of valueOfAttribute.children) {
       let textInput = input.value.toLowerCase().normalize('NFD').replace(/([\u0300-\u036f]|[^0-9a-zA-Z])/g, '')
-      if (di.getAttribute("name").includes(textInput))
+      if (di.getAttribute("name").includes(textInput)){
         di.style.display = 'block'
-      else
+      }else{
         di.style.display = "none"
+        totalNone += 1
+      }
+      if(totalNone == 16){
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops... Nenhum produto foi encontrado.',
+          text: 'Verifique os termos digitados.',
+        })
+      }
     }
-    
   }
   this.enterSearch = function (event) {
     if (event.key === "Enter") {
       event.preventDefault();
-      let container = document.querySelector('.flex-container-books')
       let totalNone = 0
       for (di of valueOfAttribute.children) {
         let textInput = input.value.toLowerCase().normalize('NFD').replace(/([\u0300-\u036f]|[^0-9a-zA-Z])/g, '')
@@ -143,9 +151,13 @@ function GettingSearch(input, valueOfAttribute) {
           di.style.display = "none"
           totalNone += 1
         }
-        }
         if(totalNone == 16){
-          
+          Swal.fire({
+            icon: 'error',
+            title: 'Oops... Nenhum produto foi encontrado.',
+            text: 'Verifique os termos digitados.',
+          })
+        }
       }
     }
   }

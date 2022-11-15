@@ -9,15 +9,24 @@
     --color-black: black
 }
 
-
 *{
     box-sizing: border-box;
-    margin:0
+    
+}
+
+html{
+    height: 100%;
+
 }
 
 body {
     background-color: rgb(250, 243, 243);
-    font-family: 'Raleway', sans-serif
+    font-family: 'Raleway', sans-serif;
+    margin:0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
 }
 
 img{
@@ -146,7 +155,7 @@ font-size: 1.5rem;
     justify-content: center;
     align-items: center;
     margin-left: 20px;
-   margin-top:1.5rem
+    margin-top:1.5rem
 }
 
 #register{
@@ -167,18 +176,46 @@ font-size: 1.5rem;
 }
 
 footer {
-    box-shadow: 2px -4px 15px rgb(198, 195, 195);
-    position: relative;
-    background-color:var(--color-yellow);
-    padding: 2.5rem 0;
-    bottom: 0;
-    width: 100%;
-    margin-top: 20rem;
+    margin-top: auto;
+  
 }
 
-footer p {
-    color: black;
-    text-align: center;
-    
+.header-footer{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: var(--color-yellow);
+    color:black;
+    width: 100%;
+    margin-top: 15rem;
+    box-shadow: 2px -4px 15px rgb(198, 195, 195);
+}
+
+
+.logo-footer{
+    width:6rem
+}
+
+.list-footer{
+   display: flex;
+   font-size: 3rem;
+   list-style: none;
+   gap: 2rem;
+}
+.list-footer li{
+    cursor: pointer;
+}
+
+.footer-information{
+    display: flex;
+    justify-content: space-around;
+    text-align: justify;
+    color: white;
+    background-color: black;
+    font-size: .8rem;
+    padding:1rem 0;
+    align-items: center;
+}
+.footer-information div {
     font-weight: bolder;
 }

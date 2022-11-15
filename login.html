@@ -7,10 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Decow's Bookstore</title>
     <link rel="stylesheet" href="./CSS/style-login.css">
+    <link rel="stylesheet" href="./CSS/loading.css">
     <script src="https://kit.fontawesome.com/ae234362c5.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
+
     <header>
         <img src="./IMAGES/logo.png" alt="Decow's Bookstore">
         <a href="./index.html">Voltar</a>
@@ -21,12 +23,12 @@
             <form action="">
                 <div class="user-box">
                     <i class="fa-solid fa-envelope icon-login"></i>
-                    <input type="text" name="" required="" placeholder=" ">
+                    <input type="text" name="" required="" email placeholder=" " autocomplete="off">
                     <label >Insira seu email</label>
                 </div>
                     <div class="user-box">
                     <i class="fa-solid fa-lock icon-password"></i>
-                    <input type="password" name="" required="" placeholder=" ">
+                    <input type="password" name="" password required="" autocomplete="off" placeholder=" ">
                     <label> Insira sua senha</label>
                 </div>
                 <div class="button-form">
@@ -39,9 +41,27 @@
         </section>
     </main>
     <footer>
-       <p>Produced by André Bottentuit</p>
+        <div class="header-footer">
+        <img class="logo-footer"src="./IMAGES/logo.png" alt="">
+        <ul class="list-footer">
+            <li><i class="fa-brands fa-github"></i></li>
+            <li><i class="fa-brands fa-linkedin"></i></li>
+            <li><i class="fa-brands fa-instagram"></i></li>
+        </ul>
+    </div>
+    <div class="footer-information">
+        <div>CONTATO: 
+        <p>andre.bottentuit@gmail.com</p>
+    </div>
+        <div>ENDEREÇO:
+        <p>Recife - PE, BRASIL</p>
+    </div>
+    <div>Produced by André Bottentuit</div>
+    </div>
     </footer>
+    <script src="./JAVASCRIPT/sweetalert.js"></script>
     <script src="./JAVASCRIPT/login.js"></script>
+
 </body>
 
 </html>
