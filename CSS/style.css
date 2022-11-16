@@ -87,7 +87,8 @@ body {
     transition: all 1s linear;
     border-radius: 6px 6px 0 0;
     box-shadow: 5px 5px 5px rgb(186, 184, 184);
-    margin-left:2rem
+    margin-left:2rem;
+   
 }
 
 .price{
@@ -514,7 +515,7 @@ transform: rotate(270deg);
 
 .container-all-sections{
     overflow-y: scroll;
-    max-height:35rem
+    max-height:25rem
 }
 
 
@@ -675,22 +676,12 @@ footer {
 
 @media(min-width: 1600px) {
     html {
-        font-size: 75%
+        font-size: 80%
     }
 }
 
 
-
-
 @media screen and (max-width:1000px) {
-    html {
-        font-size: 55%
-    }   
-}
-
-
-
-@media screen and (max-width:800px) {
     html {
         font-size: 70%
     }
