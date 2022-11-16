@@ -1,18 +1,20 @@
 
 /*--------------------------------CLOSE BUTTON-----------------------------------*/
 const closeButton = document.querySelector('.closed')
-const transparency = document.querySelector('.transparent')
 closeButton.addEventListener('click', closePromotion)
-transparency.addEventListener('click', closePromotion)
+
 
 function closePromotion() {
   closeButton.style.display = 'none'
-  transparency.style.display = 'none'
-  document.querySelector('.container-one').style.display = 'none'
-  document.querySelector('[page]').style.background = 'rgb(250, 243, 243)'
+  document.querySelector('.container-one').style.bottom = '-50rem'
+  //document.querySelector('.container-one').style.display = 'none'
   document.querySelector('body').classList.add('addOverflow')
 }
 
+function openPromotion () {
+  document.querySelector('.container-one').style.bottom = '1px'
+}
+openPromotion()
 
 /*--------------------------------START COUNTDOWN-----------------------------------*/
 const days = [
@@ -89,11 +91,23 @@ function takeTheTime() {
 
   day.textContent = daysRemaining
 
+        let dd = document.getElementById('dd')
+        let hh = document.getElementById('hh')
+        let mm = document.getElementById('mm')
+        let ss = document.getElementById('ss')
+        
+        dd.style.strokeDashoffset = 440 - (440 * day) / 5
+        hh.style.strokeDashoffset = 220 - (220 * dateFormatArray[0]) / 24
+        mm.style.strokeDashoffset = 220 - (220 * dateFormatArray[1]) / 60
+        ss.style.strokeDashoffset = 220 - (220 * dateFormatArray[2]) / 60
+
   countdown.forEach((item, i) => {
     if (dateFormatArray[i] < 10) {
       return item.innerHTML = `0${dateFormatArray[i]}`
-    } else {}
-    return item.innerHTML = dateFormatArray[i]
+    } else {
+      return item.innerHTML = dateFormatArray[i]
+    }
+    
   })
 
   if (timeLeft < 0) {

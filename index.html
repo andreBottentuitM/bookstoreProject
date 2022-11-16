@@ -6,15 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./CSS/style.css">
+    <link rel="icon" type="image/x-icon" href="./IMAGES/logo.png">
     <script src="https://kit.fontawesome.com/ae234362c5.js" crossorigin="anonymous"></script>
     <title>Decow's Bookstore</title>
 </head>
 
 <body page>
     <!--COUNTDOWN-->
-   <div class="transparent"></div>
-    <div class="center-promotion">
         <section class="container-one">
+            <div class="closed">X</div>
             <article>
                 <img class="image-book" src="./IMAGES/guerra e paz.jpg" alt="war and peace">
             </article>
@@ -28,29 +28,45 @@
                 <p class="text">Aproveite a promoção, ela é por tempo determinado: <span class="limit">aa</span></p>
                 <p class="price">POR APENAS: R$30.00</p>
                 <div class="flex-countdown">
-                    <div>
-                        <h3 class="day">5</h3><span>Dias</span>
+                    <div class="circle" style="--clr:#ff2972;">
+                        <svg>
+                            <circle cx="35" cy="35" r="35"></circle>
+                            <circle cx="35" cy="35" r="35" id="dd"></circle>
+                        </svg>
+                        <div><h3 class="day">5</h3><span>Dias</span></div>
                     </div>
-                    <div>
-                        <h3 class="time">13</h3><span>Horas</span>
+                        <div class="circle" style="--clr:#ff2972;">
+                            <svg>
+                                <circle cx="35" cy="35" r="35"></circle>
+                                <circle cx="35" cy="35" r="35" id="hh"></circle>
+                            </svg>
+                            <div> <h3 class="time">13</h3><span>Horas</span></div>
                     </div>
-                    <div>
-                        <h3 class="time">23</h3><span>Minutos</span>
+                    <div class="circle" style="--clr:#ff2972;">
+                        <svg>
+                            <circle cx="35" cy="35" r="35"></circle>
+                            <circle cx="35" cy="35" r="35" id="mm"></circle>
+                        </svg>
+                        <div><h3 class="time">23</h3><span>Minutos</span></div>
                     </div>
-                    <div>
-                        <h3 class="time">45</h3><span>Segundos</span>
+                    <div class="circle" style="--clr:#ff2972;">
+                        <svg>
+                            <circle cx="35" cy="35" r="35"></circle>
+                            <circle cx="35" cy="35" r="35" id="ss"></circle>
+                        </svg>
+                        <div> <h3 class="time">45</h3><span>Segundos</span></div>
                     </div>
                 </div>
-                <div class="closed">X</div>
+                
             </article>
         </section>
-    </div>
+
     <!--HEADER-->
     <div class="wrapper">
     <header class="nav-header">
         <nav>
             <div class="header-center">
-                <a href=""><img src="./IMAGES/logo.png" alt="logotipo" class="logo"></a>
+                <a href=""><img src="./IMAGES/logo.png" alt="logotipo" title="Decow's Bookstore" class="logo"></a>
                 <ul class="link-flex">
                     <li class="flex-search"><input class="search" type="search" search="books">
                         <i lupa class="fa-solid fa-magnifying-glass"></i></li>
@@ -102,19 +118,19 @@
                     
                 </div>
                 <section class="totalValue">
-                    <div>VALOR TOTAL:</div><span>R$0.00</span>
+                    <div><p>VALOR TOTAL:</p><span>R$0.00</span></div>
+                    <button class="button-purchase">Finalizar Compra</button>
                 </section>
-                <button class="button-purchase">Finalizar Compra</button>
             </div>
         </div>
     </aside>
     <footer>
         <div class="header-footer">
-        <img class="logo-footer"src="./IMAGES/logo.png" alt="">
+        <img class="logo-footer"src="./IMAGES/logo.png" alt="Decow's Bookstore logotipo" title="Decow's Bookstore">
         <ul class="list-footer">
-            <li><i class="fa-brands fa-github"></i></li>
-            <li><i class="fa-brands fa-linkedin"></i></li>
-            <li><i class="fa-brands fa-instagram"></i></li>
+            <li><a title="Github" href="https://github.com/andreBottentuitM" target="_blank"><i class="fa-brands fa-github"></i></a></li>
+            <li><a title="Linkedin" href="https://www.linkedin.com/in/andr%C3%A9-bottentuit-de-macedo/" target="_blank"><i class="fa-brands fa-linkedin"></i></a></li>
+            <li><a title="Instagram" href="https://www.instagram.com/andrebottentuit/" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
         </ul>
     </div>
     <div class="footer-information">

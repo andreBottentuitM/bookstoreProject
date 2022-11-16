@@ -175,10 +175,7 @@ section h1 {
     background-color: var(--color-yellow);
 }
 
-
-
 footer {
-    width:100%;
     margin-top: auto;
 }
 
@@ -189,8 +186,12 @@ footer {
     background-color: var(--color-yellow);
     color:black;
     width: 100%;
-    margin-top: 15rem;
+    margin-top:10rem;
     box-shadow: 2px -4px 15px rgb(198, 195, 195);
+}
+
+.logo-footer{
+    width:10rem
 }
 
 .list-footer{
@@ -199,6 +200,12 @@ footer {
    list-style: none;
    gap: 3rem;
 }
+
+.list-footer a{
+  text-decoration: none;
+  color:black
+}
+
 .list-footer li{
     cursor: pointer;
 }
@@ -215,14 +222,6 @@ footer {
 }
 .footer-information div {
     font-weight: bolder;
-}
-
-.footer-contact{
-    color:white
-}
-
-.logo-footer{
-    width:10rem
 }
 
 .circle{
@@ -330,5 +329,24 @@ p{
     p{
         width:50vw
     }
-    
+    .footer-information{
+        display: flex;
+        flex-direction: column;
+        gap:3rem;
+        text-align: center;
+        color: white;
+        background-color: black;
+        font-size: 1.3rem;
+        padding:2rem 0;
+        align-items: center;
+    }
+
+    .list-footer{
+        font-size: 3rem;
+        gap: 3rem;
+     }
+
+     .logo-footer{
+        width:5.5rem
+    }
 }
