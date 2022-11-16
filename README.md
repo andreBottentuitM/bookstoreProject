@@ -1,8 +1,6 @@
 # <h1 align="center"> Decow's Bookstore </h1> 
 
-<img width="923" alt="image" src="https://user-images.githubusercontent.com/100027700/200431126-6399639e-13ad-4ee6-bed0-f79fa0c22a3b.png">
-<img width="940" alt="image" src="https://user-images.githubusercontent.com/100027700/200431175-1c70698c-7f8a-4e64-a1cf-5166e53b0967.png">
-<img width="938" alt="image" src="https://user-images.githubusercontent.com/100027700/200431224-2c9d7f67-1d71-42b6-8181-7e66e150f04a.png">
+![ezgif com-gif-maker (1)](https://user-images.githubusercontent.com/100027700/202316787-0495f641-af42-43a2-97e0-9648f9432240.gif)
 
 
 :construction: Projeto em construção :construction:
