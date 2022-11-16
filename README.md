@@ -8,14 +8,14 @@
 :construction: Projeto em construção :construction:
 
 <h2>Descrição</h2>
-Projeto de uma interface gráfica totalmente responsiva de um e-commerce de livros lidos por mim. O projeto lida com processos de inclusão de livros em carrinhos de compras, cadastro de novos usuários com formulários com validações.
+Projeto totalmente responsivo de um e-commerce de livros. O projeto lida com processos de inclusão de livros em carrinhos de compras, countdown promocional totalmente estilizado e cadastro de novos usuários com formulários com validações que serão armazenados localmente (localStorage).
 
 <h2>Tecnologias</h2>
 <ul>
 <li>HTML
 <li>CSS
 <li>JAVASCRIPT
-<li>API (ViaCep)
+<li>API (VIACEP)
 </ul>
 
 
