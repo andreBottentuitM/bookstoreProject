@@ -286,7 +286,7 @@ transform: rotate(270deg);
     margin: 0 auto;
 }
 
-.flex-literatura li:after{
+.flex-literatura a:after{
     display: block;
     padding-bottom: 2px;
     content: '';
@@ -295,7 +295,7 @@ transform: rotate(270deg);
     transition: transform 300ms ease-in-out;
 }
 
-.flex-literatura li:hover:after {
+.flex-literatura a:hover:after {
     transform: scaleX(1)
 }
 
@@ -843,11 +843,9 @@ footer {
         color: #4c4b4b;
         
     }
-    .flex-literatura li{
-        cursor: pointer;
-    }
+   
     
-    .flex-literatura li:after{
+    .flex-literatura a:after{
         border: none
     }
 
