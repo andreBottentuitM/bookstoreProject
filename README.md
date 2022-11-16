@@ -22,7 +22,7 @@ Projeto totalmente responsivo de um e-commerce de livros. O projeto lida com pro
 <li><b>Countdown:</b> Utilização de funções nativas do javascript para gerar um countdown promocional. Também, estilização utilizando propriedades como transition e animation.
 <li><b>Inclusão de livros em carrinho de compras:</b> Utilização de funções Javascript.
 <li><b>Responsividade:</b> Utilização de Gridlayout e media-query.
-<li><b>Formulário de cadastro:</b> Utilização de HTML e Javascript(expressões regulares(REGEX)).
+<li><b>Formulário de cadastro:</b> Utilização de HTML e Javascript. Utilização de REGEX para validação dos inputs e alerts personalizados com a biblioteca SweetAlert.
 <li><b>API ViaCep:</b> Utilização da api ViaCep para pegar informações de endereço a partir de um CEP.
 </ul>
 
