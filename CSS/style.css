@@ -512,7 +512,7 @@ transform: rotate(270deg);
 
 .container-all-sections{
     overflow-y: scroll;
-    max-height:25rem
+    max-height:50vh
 }
 
 
@@ -671,9 +671,9 @@ footer {
 /*MEDIA QUERY*/
 
 
-@media(min-width: 1600px) {
+@media(min-width: 2000px) {
     html {
-        font-size: 80%
+        font-size: 75%
     }
 }
 
