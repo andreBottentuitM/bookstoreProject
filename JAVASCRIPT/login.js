@@ -1,14 +1,29 @@
 const buttonSubmitLogin = document.querySelector('#submit')
+
 const validationLogin = (e) => {
     e.preventDefault()
     buttonSubmitLogin.innerHTML = '<div class="loader"></div>'
     let users = JSON.parse(localStorage.getItem('users'))
     const emailInput = document.querySelector('[email]')
     const passwordInput = document.querySelector('[password]')
-    let validation = users.some((user)=> {
-      return user.email === emailInput.value && user.password === passwordInput.value
-    })
-    if(!validation || !JSON.parse(localStorage.getItem('users'))){
+
+    if(!users){
+      setTimeout(() => {
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Email ou senha incorretos!',
+          })
+          buttonSubmitLogin.innerHTML = 'ENTRAR'
+        }, 1000)
+    }
+    
+      let validation = users.some((user)=> {
+        return user.email === emailInput.value && user.password === passwordInput.value
+      })
+
+    if(!validation){
+      
       setTimeout(() => {
         Swal.fire({
             icon: 'error',
