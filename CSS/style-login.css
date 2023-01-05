@@ -51,11 +51,18 @@ img{
 header{
     background-color: #fdd900;
     box-shadow: 5px 5px 5px rgb(186, 184, 184);
+}
+
+.header-container{
+    max-width:1550px;
+    margin:0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding:1rem 0
 }
+
+
 header a {
     margin-right:20px ;
     text-decoration: none;
@@ -190,18 +197,18 @@ font-size: 1.5rem;
 
 footer {
     margin-top: auto;
-  
+    background-color: var(--color-yellow);
+    box-shadow: 2px -4px 15px rgb(198, 195, 195);
 }
 
 .header-footer{
     display: flex;
     align-items: center;
     justify-content: space-around;
-    background-color: var(--color-yellow);
+    margin:0 auto;
     color:black;
     width: 100%;
-    margin-top: 15rem;
-    box-shadow: 2px -4px 15px rgb(198, 195, 195);
+    max-width:1550px
 }
 
 
@@ -224,16 +231,22 @@ footer {
     color:black
   }
 
+  .footer-container{
+    background-color: black;
+  }
+
 .footer-information{
     display: flex;
     justify-content: space-around;
     text-align: justify;
     color: white;
-    background-color: black;
     font-size: .8rem;
     padding:1rem 0;
     align-items: center;
+    max-width: 1550px;
+    margin:0 auto
 }
+
 .footer-information div {
     font-weight: bolder;
 }

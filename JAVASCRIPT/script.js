@@ -101,6 +101,8 @@ function takeTheTime() {
         mm.style.strokeDashoffset = 220 - (220 * dateFormatArray[1]) / 60
         ss.style.strokeDashoffset = 220 - (220 * dateFormatArray[2]) / 60
 
+        console.log(220 - (220 * dateFormatArray[2]) / 60)
+
   countdown.forEach((item, i) => {
     if (dateFormatArray[i] < 10) {
       return item.innerHTML = `0${dateFormatArray[i]}`

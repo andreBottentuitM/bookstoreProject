@@ -26,11 +26,30 @@ body {
     background-color: rgb(250, 243, 243);
 }
 
-header {
+header{
     background-color: #fdd900;
     box-shadow: 5px 5px 5px rgb(186, 184, 184);
-    width: 100%;
-    padding:1.6rem 0
+}
+
+header a {
+    margin-right:20px ;
+    text-decoration: none;
+    color:rgb(96, 93, 93);
+    transition: .5s all linear;
+    font-size: 1.6rem;
+}
+
+header a:hover{
+   color:black
+}
+
+.header-container{
+    max-width:1550px;
+    margin:0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:1rem 0
 }
 
 img{
@@ -177,17 +196,19 @@ section h1 {
 
 footer {
     margin-top: auto;
+    background-color: var(--color-yellow);
+    box-shadow: 2px -4px 15px rgb(198, 195, 195);
 }
 
 .header-footer{
     display: flex;
     align-items: center;
     justify-content: space-around;
-    background-color: var(--color-yellow);
+    max-width:1550px;
     color:black;
     width: 100%;
     margin-top:10rem;
-    box-shadow: 2px -4px 15px rgb(198, 195, 195);
+    margin:0 auto
 }
 
 .logo-footer{
@@ -210,15 +231,20 @@ footer {
     cursor: pointer;
 }
 
+.footer-container{
+    background-color: black;
+  }
+
 .footer-information{
     display: flex;
     justify-content: space-around;
     text-align: justify;
     color: white;
-    background-color: black;
     font-size: 1.3rem;
     padding:2rem 0;
     align-items: center;
+    max-width:1550px;
+    margin:0 auto
 }
 .footer-information div {
     font-weight: bolder;
