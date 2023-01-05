@@ -352,9 +352,9 @@ totalInputs.push(id)
 totalShopCart.innerHTML = totalInputs.length
 totalShopCartResponsive.innerHTML = totalInputs.length
 
-gettingTotalValue()
 const allSelects = document.querySelectorAll('select')
 allSelects.forEach(item => item.addEventListener('click', gettingTotalValue))
+gettingTotalValue()
 }
 }
 
