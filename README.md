@@ -3,8 +3,6 @@
 ![ezgif com-gif-maker (1)](https://user-images.githubusercontent.com/100027700/202316787-0495f641-af42-43a2-97e0-9648f9432240.gif)
 
 
-:construction: Projeto em construção :construction:
-
 <h2>Descrição</h2>
 Projeto totalmente responsivo de um e-commerce de livros. O projeto lida com processos de inclusão de livros em carrinhos de compras, countdown promocional totalmente estilizado e cadastro de novos usuários com formulários com validações que serão armazenados localmente (localStorage).
 
