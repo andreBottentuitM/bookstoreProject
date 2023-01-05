@@ -74,6 +74,10 @@ header a:hover{
    color:black
 }
 
+main {
+    margin-bottom:8rem
+}
+
 .login-box {
     display: block;
     margin: 3rem auto;
@@ -208,7 +212,7 @@ footer {
     margin:0 auto;
     color:black;
     width: 100%;
-    max-width:1550px
+    max-width:1550px;
 }
 
 
